@@ -26,6 +26,12 @@ var autoFill = function () {
                 newPredict.addClass("prediction");
                 predictionsView.append(newPredict);
             }
+            $(".prediction").click(autofillClick);
+            function autofillClick(){
+                console.log("clickssss");
+                locInput.val(this.innerText);
+                predictionsView.hide();
+            }
             $(".prediction").hover(hoverOn, hoverOff);
             function hoverOn(){
                 console.log("hoveron")
@@ -37,17 +43,13 @@ var autoFill = function () {
                 console.log("hoveroff")
                 $(this).removeClass("autofillHover");
             }
-            $(".prediction").click(autofillClick);
-            function autofillClick(){
-                locInput.val(this.innerText);
-                predictionsView.hide();
-            }
-            $(locField).blur(autofillBlur);
-            function autofillBlur(){
-                console.log("focusout")
-                predictionsView.hide();
+           
+            // $(locField).blur(autofillBlur);
+            // function autofillBlur(){
+            //     console.log("focusout")
+            //     predictionsView.hide();
 
-            }
+            // }
 
         }
         // renderPredictions();
