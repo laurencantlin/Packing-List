@@ -18,6 +18,9 @@ $("#weatherSearch").on("click", function(event) {
     var cloudsP = $( "#weatherInfo2" )
     cloudsP.text("clouds:" + result.weather[0].description);
 
+    var windP = $( "#weatherInfo3" )
+    windP.text("Wind Speed:" + result.wind.speed);
+
    });
   });
 });
