@@ -8,12 +8,12 @@
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="Assets/CSS/css.css">
     
-    <title>Add a Trip</title>
+    <title>New Trip Form</title>
 </head>
 
 <body>
         <header>
-                <button class="add-item-btn"><span>Cancel</span></button>
+                <a href="index.html" button class="add-item-btn" id="cancelTripBtn" role="button"><span>Cancel</span></a>
             </header>
     <form>
         <h2> Add Trip</h2>
@@ -37,7 +37,7 @@
                 <label for=inputDate> End Date:</label>
                 <input type="date" class="form-control" id="end-date">
         </div>
-        <button type="submit" class="btn btn-block">Create Trip</button>
+        <a href="Trip-List.html" button type="submit" class="btn btn-block" id="createTrip">Create Trip</a>
     </form>
 
 
@@ -45,5 +45,10 @@
 
     </div>
     <div class="footer navbar-fixed-bottom" id="footer"> &copy A Teeny-Tiny Crabs Production 2018</div> 
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="wireframeUI.js"></script>
 </body>
 </html>
