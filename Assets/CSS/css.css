@@ -1,0 +1,97 @@
+header {
+   background: blue;
+   height: 60px;
+}
+.jumbotron, #advisor {
+    height: 120px;
+}
+.jumbotron {
+    height: 150px;
+}
+
+
+.add-item-btn {
+    color: white;
+    font: bold;
+    font-size: 30px;
+    border: solid, 3px, white;
+}
+
+ /* #trip-list {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    margin-top: 30px;
+} */
+
+#trip1 {
+    padding: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+
+}
+
+#trip2 {
+    padding: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+#trip3 {
+    padding: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+#footer {
+    background-color: blue;
+    height: 50px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+
+}
+
+
+
+/* Add trip form */
+form {
+    max-width: 65%;
+    margin: auto;
+    margin-top: 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+.form-group {
+    padding: 10px;
+}
+
+.btn-block {
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* user home screen */
+ #tripAdvisor {
+     margin: auto;
+     margin-right: 10px;
+ }
+
+ #suggestion {
+     border-style: solid;
+     border-width: 2px;
+     border-color: black;
+     padding: 10px; 
+ }
+
+ #category-btn {
+    margin-top: 150px;
+ }
