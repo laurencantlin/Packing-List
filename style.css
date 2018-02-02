@@ -1,0 +1,24 @@
+ul{
+    color: blue;
+}
+#predictionsView{
+	padding: 10px 30px;
+	background: white;
+	border: 1px solid grey;
+	border-radius: 3px;
+	color: navy;
+	display: none;
+	/* background: white;
+	margin:0 auto;
+
+	position: absolute; */
+}
+body{
+}
+.prediction{
+	color: blue;
+}
+
+.autofillHover{
+	background-color: rgb(238, 238, 238);
+}
