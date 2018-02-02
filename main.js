@@ -11,7 +11,6 @@ $("#weatherSearch").on("click", function(event) {
    }).done(function(result){
     console.log(result);
 
-  // $("#weatherinfo");
     var weatherP = $( "#weatherInfo" )
     weatherP.text("temp:" + result.main.temp );
     
