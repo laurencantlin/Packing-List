@@ -16,16 +16,18 @@ function renderTrips(){
         $("#trip-row-"+i).text(tripsArray[i].tripName)
     }
 
-
     function clickTrip(){
-        console.log(this);
-         trip=this.tripName;
-        window.location.href = "Pack-List.html";
-        return trip;
+        var firedTrip = $(this).text();
+
+        for (var i=0; i<tripsArray.length; i++){
+            if(tripsArray[i].tripName === firedTrip){
+                console.log(firedTrip)
+                localStorage.setItem("SetTrip", JSON.stringify(tripsArray[i]));
+            }
+        // window.location.href = "Pack-List.html";
+     }
     }
-    
-    $(".added-trip-name").click(clickTrip);
+    $(document).on("click", ".added-trip-name", clickTrip);
+
 }
-
-
 renderTrips();

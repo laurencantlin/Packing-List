@@ -28,23 +28,49 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 input-group">
+                <!-- INPUT ITEM FORM FIELD: -->
                 <input type="text" class="form-control" aria-label="..." id="item-input">
+
                 <div class="input-group-btn">
                     <!-- Button and dropdown menu -->
                     <!-- <button type="button" class="btn btn-default">Action</button> -->
-                    <button type="button" class="btn btn-default " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clothes
+
+                    <!--SELECTED CATEGORY BUTTON  -->
+                    <button type="button" class="btn btn-default " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="categ-dropdown-btn">Clothes
                         <span class="caret"></span>
                     </button>
+
+                    <!-- +ADD NEW ITEM ICON BUTTON -->
                     <button class="btn btn-primary" type="button" id="add-item">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </button>
+
+                    <!-- SELECT CATEGORY DROPDOWN LIST  -->
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#">Clothes</a>
+                            <a href="#" class="set-category-btn">Clothes</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Toiletries</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Electronics</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Medicine</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Travel Documents</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Shoes</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Outdoor</a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#">Separated link</a>
+                            <a href="#" id="add-categ-btn">Add category...</a>
                         </li>
                     </ul>
                     <!-- </div> -->

@@ -13,7 +13,7 @@
 // console.log(renderTripName);
 
 
-//adds auto fill function
+//AUTOFILL FUNCTION
 var autoFill = function () {
     var locInput = $("#tripLocation");
     locInput.val();
@@ -79,9 +79,9 @@ var autoFill = function () {
 
 
 }
-
 $("#tripLocation").keyup(autoFill);
-// -----ADD TRIP FORM -------
+
+// SUBMIT ADD TRIP FORM FUNCTION
 function addTrip(event) {
     event.preventDefault();
     var tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
@@ -106,7 +106,6 @@ function addTrip(event) {
     localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
     window.location.href = "Pack-List.html";
 }
-
 $("#create-trip-btn").click(addTrip);
 
 
