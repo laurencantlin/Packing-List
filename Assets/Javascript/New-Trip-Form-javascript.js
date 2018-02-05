@@ -68,7 +68,7 @@ var autoFill = function () {
 
 $("#tripLocation").keyup(autoFill);
 // -----ADD TRIP FORM -------
-function clickCreateTrip(event) {
+function addTrip(event) {
     event.preventDefault();
     var tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
 
@@ -87,10 +87,10 @@ function clickCreateTrip(event) {
     tripsArray.push(trip);
     console.log(tripsArray);
     localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
-    window.location.href = "Trip-List.html";
+    window.location.href = "Pack-List.html";
 }
 
-$("#createTripBtn").click(clickCreateTrip);
+$("#createTripBtn").click(addTrip);
 
 
 

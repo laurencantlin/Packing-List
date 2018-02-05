@@ -51,7 +51,7 @@ header {
     margin-top: 30px;
 } */
 
-#trip1 {
+.tripcol {
     padding: 20px;
     border-style: solid;
     border-width: 2px;
