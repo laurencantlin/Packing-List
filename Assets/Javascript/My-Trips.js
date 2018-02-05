@@ -14,6 +14,16 @@ function renderTrips(){
         $("#trip-row-"+i).append(newTripCol);
         $("#trip-col-"+i).text(tripsArray[i].tripName)
     }
+
+
+    function clickTrip(){
+        console.log(this);
+        window.location.href = "Pack-List.html";
+
+    }
+    
+    $(".tripcol").click(clickTrip);
 }
+
 
 renderTrips();
