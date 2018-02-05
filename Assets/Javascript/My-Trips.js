@@ -8,12 +8,12 @@ function renderTrips(){
 
     for (var i=0; i<tripsArray.length; i++){
         console.log(tripsArray[i].tripName);
-        var myTrips=$("#trip-list");
-        var newTripRow = "<div class='row' id='trip-row-" +i +"'>"
+        var myTrips=$("#added-trip-list");
+        var newTripRow = "<p class='added-trip-name' id='trip-row-" +i +"'>"
         $(myTrips).append(newTripRow);
-        var newTripCol = "<div class='col-xs-12 tripcol' id='trip-col-" +i +"'>"
-        $("#trip-row-"+i).append(newTripCol);
-        $("#trip-col-"+i).text(tripsArray[i].tripName)
+        // var newTripCol = "<div class='col-xs-12 added-trip-name ' id='trip-col-" +i +"'>"
+        // $("#trip-row-"+i).append(newTripCol);
+        $("#trip-row-"+i).text(tripsArray[i].tripName)
     }
 
 
@@ -24,7 +24,7 @@ function renderTrips(){
         return trip;
     }
     
-    $(".tripcol").click(clickTrip);
+    $(".added-trip-name").click(clickTrip);
 }
 
 

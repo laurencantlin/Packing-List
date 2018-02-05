@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/css.css">
+    <link href="https://fonts.googleapis.com/css?family=Pattaya|Racing+Sans+One|Assistant" rel="stylesheet">
+
+    <title>My Trips</title>
+</head>
+
+<body>
+
+    <header>
+            <a href="Trip-List.html"> <img src="assets/images/packlistlogo.png" alt="Trip Buddy" id="logo-header"/></a>
+
+    </header>
+
+    <!-- jumbotron -->
+
+
+
+
+          
+    <div class="jumbotron" id="home-jumbo">
+
+        <div class="col-md-6" id="nextTripLocation">
+            <h2> Trip Destination</h2>
+        </div>
+        <div class="col-md-6" id="nextTripName">
+            <h1> Trip Name</h1>
+        </div>
+        <div class="col-md-6" id="nextTripDate">
+            <h4>Trip start/end date</h4>
+        </div>
+    </div>
+    
+    <div class="jumbotron" id="advisor"> Trip Advisor sugesstions
+            <span>(carousel)</span>
+        </div>
+
+    <div class="container">
+
+        <div class="row">
+            <h3 class="trip-list-header"> Trip List</h3>
+
+        </div>
+        <!-- div to push new divs of added trips -->
+        <div class="row" id="trip-list">
+
+            <div class="col-xs-12" id="added-trip-list">
+                <p class="fadded-trip-name"> No current trip </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="row" id="create-list-btn">
+            <div class="col-xs-4 col-xs-offset-8">
+
+                    <a href="New-Trip-form.html"><button type="button" class="btn btn-default" id="create-btn">
+                    <span>Add Trip</span>
+                </button></a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="footer navbar-fixed-bottom" id="footer"> &copy A Teeny-Tiny Crabs Production 2018</div>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/My-Trips.js"></script>
+</body>
+
+</html>
+
+
+
