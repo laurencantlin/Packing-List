@@ -1,3 +1,4 @@
+var trip;
 function renderTrips(){
     var tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
     console.log(tripsArray);
@@ -18,8 +19,9 @@ function renderTrips(){
 
     function clickTrip(){
         console.log(this);
+         trip=this.tripName;
         window.location.href = "Pack-List.html";
-
+        return trip;
     }
     
     $(".tripcol").click(clickTrip);
