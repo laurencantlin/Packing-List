@@ -1,3 +1,39 @@
+// function formData() {
+//     var formInput = 
+//     document.getElementById("tripName");
+//     var text ""
+// }
+
+// function renderTripName () {
+//     var tripNameInput = $("tripName");
+    
+//     document.getElementById("create-trip-btn").addEventListener("click", fu)
+    
+// }
+// console.log(renderTripName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //adds auto fill function
 var autoFill = function () {
