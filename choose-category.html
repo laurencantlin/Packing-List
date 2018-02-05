@@ -8,34 +8,88 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="Assets/CSS/css.css">
+    <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pattaya|Racing+Sans+One|Assistant" rel="stylesheet">
 
-    <title>Trip Added</title>
+    <title>Category</title>
 </head>
 
 <body>
     <header>
-        <button class="add-item-btn">
+            <a href="user-home-screen.html"> <img src="assets/images/packlistlogo.png" alt="Trip Buddy" id="logo-header"/></a>
+
+            <a href="user-home-screen.html"><button id="back-btn" class="btn btn-default">
             <span>Back</span>
-        </button>
+        </button></a>
     </header>
-    <div class="jumbotron"> Next Trip</div>
-
-    <div class="jumbotron" id="advisor"> Trip Advisor sugesstions
-        <span>(carousel)</span>
-    </div>
-
 
     <div class="container">
-        
-        <div class="row" id="category-btn">
-            <div class="col-xs-4 col-xs-offset-8">
-                <button type="button" class="btn-default">Create List</button>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="category-form" class="col-md-6">
+                    <div id="category-header">
+                        <h2 class="add-tag">Categories</h2>
+                    </div>
+           
+            <div class="row">
+                <div class="col-md-6">
+                    <label id="category-btn">
+                        <input type="checkbox"> Clothes
+                    </label>
+                </div>
+                <div class="col-md-6">
+                        <label id="category-btn">
+                            <input type="checkbox"> Toiletries
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                            <label id="category-btn">
+                                <input type="checkbox"> Electronics
+                            </label>
+                        </div>
+
+                <div class="col-md-6" id="new-cat-div">
+                    <button  id="add-category-btn" class="btn default">
+                        <span>Add New Category</span>  </button>
+                   
+                </div>
+
+                <div class="col-md-4" id="new-category-box">
+                        <form id="new-category-form">
+
+                                <h4 class="category-tag"> New Category</h4>
+                              
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="newCategoryName">
+                                </div>
+                        <!-- change btn ID -->
+                                <div class="col-md-6" id="create-category-col">
+                                        <a href="choose-category.html"><button type="submit" id="create-category-btn" class="btn btn-default">Create Category</button></a>
+                                </div>
+
+                </div>
+    
+
             </div>
+            </form>
+            <div class="col-md-6">
+                        <a href="user-home-screen.html"><button id="next-btn" class=" btn btn-default"> Next</button></a>
+                </div>
+        </div>
         </div>
 
     </div>
 
     <div class="footer navbar-fixed-bottom" id="footer"> &copy A Teeny-Tiny Crabs Production 2018</div>
+
+
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/javascript/javascript.js"></script>
+
+
+
 </body>
 
 </html>

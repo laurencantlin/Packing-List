@@ -8,49 +8,76 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="Assets/CSS/css.css">
+    <link href="https://fonts.googleapis.com/css?family=Pattaya|Racing+Sans+One|Assistant" rel="stylesheet">
 
-    <title>Packing List</title>
+    <title>Home</title>
 </head>
 
 <body>
 
     <header>
-        <button class="add-item-btn">+</button>
+            <a href="index.html"> <img src="assets/images/packlistlogo.png" alt="Trip Buddy" id="logo-header"/></a>
+
     </header>
 
     <!-- jumbotron -->
-   
-            <div class="jumbotron"> Next Trip</div>
 
-   
+    <div class="jumbotron" id="home-jumbo">
+
+        <div class="col-md-6" id="nextTripLocation">
+            <h2> Trip Destination</h2>
+        </div>
+        <div class="col-md-6" id="nextTripName">
+            <h1> Trip Name</h1>
+        </div>
+        <div class="col-md-6" id="nextTripDate">
+            <h4>Trip start/end date</h4>
+        </div>
+    </div>
+    
+    <div class="jumbotron" id="advisor"> Trip Advisor sugesstions
+            <span>(carousel)</span>
+        </div>
 
     <div class="container">
+
+        <div class="row">
+            <h3 class="trip-list-header"> Trip List</h3>
+
+        </div>
         <!-- div to push new divs of added trips -->
         <div class="row" id="trip-list">
-            <div class="row" id="trip1-row">
-                <div class="col-xs-12" id="trip1">
-                    TRIP A
-                </div>
+
+            <div class="col-xs-12" id="added-trip-list">
+                <p class="added-trip-name"> No current trip </p>
             </div>
-            <div class="row" id="trip2-row">
-                <div class="col-xs-12" id="trip2">
-                    TRIP B
-                </div>
-            </div>
-            <div class="row" id="trip3-row">
-                <div class="col-xs-12" id="trip3">
-                    TRIP C
-                </div>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="row" id="create-list-btn">
+            <div class="col-xs-4 col-xs-offset-8">
+                    <a href="form.html"><button type="button" class="btn btn-default" id="create-btn">
+                    <span>Add Trip</span>
+                </button></a>
             </div>
         </div>
 
     </div>
+
+
     <div class="footer navbar-fixed-bottom" id="footer"> &copy A Teeny-Tiny Crabs Production 2018</div>
 
 
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/javascript/javascript.js"></script>
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
 </body>
 
 </html>
+
+
+

@@ -8,32 +8,67 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="Assets/CSS/css.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Pattaya|Racing+Sans+One|Assistant" rel="stylesheet">
     <title>Trip Added</title>
 </head>
 
 <body>
     <header>
-        <!-- <button class="add-item-btn">
-            <span>Back</span>
-        </button> -->
+       <a href="user-home-screen.html"> <img src="assets/images/packlistlogo.png" alt="Trip Buddy" id="logo-header"/></a>
+
     </header>
-    <div class="jumbotron"> Next Trip</div>
+    <div class="row">
+    <div class="col-xs-12">
+    <div class="jumbotron" id="user-jumbo"> 
+            <div  class="col-xs-12" id="nextTripLocation"><h2> Trip Destination</h2></div>
+            <div  class="col-xs-12" id="nextTripName"><h1> Trip Name</h1></div>
+            <div class="col-xs-12" id="nextTripDate"><h4>Trip start/end date</h4></div>
+    </div>
+</div>
+</div>
 
     <div class="jumbotron" id="advisor"> Trip Advisor sugesstions
         <span>(carousel)</span>
     </div>
 
-
     <div class="container">
-        
-        <div class="row" id="category-btn">
-            <div class="col-xs-4 col-xs-offset-8">
-                <button type="button" class="btn-default">Create List</button>
+
+            <div class="row"> <h3 class="trip-list-header"> Trip List</h3> 
+                
             </div>
+        <!-- div to push new divs of added trips -->
+        <div class="row" id="trip-list">
+
+                        <div class="col-xs-12" id="added-trip-list">
+                            <h4 class="added-trip-name"> New York </h4>
+                        <div class="col-xs-8" id="packing-list">
+                            <p class="added-category"> Category Name</p>
+                            <p class="added-list-items"> List Items</p>
+                        </div>
+                    </div>
+
+    
+
         </div>
 
     </div>
+
+    <div class="container">
+
+            <div class="row" id="create-list-btn">
+                <div class="col-xs-4 col-xs-offset-6">
+                        <a href="choose-category.html"><button type="button" class="btn btn-default" id="create-btn"><span>Create List</span></button></a>
+                </div>
+
+                <a href="form.html"><button type="button" class="btn btn-default" id="create-btn">
+                        <span>Add Trip</span>
+                    </button></a>
+            </div>
+    
+        </div>
+
+
+  
 
     <div class="footer navbar-fixed-bottom" id="footer"> &copy A Teeny-Tiny Crabs Production 2018</div>
 </body>
