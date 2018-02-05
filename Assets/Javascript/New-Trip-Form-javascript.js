@@ -13,28 +13,6 @@
 // console.log(renderTripName);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //adds auto fill function
 var autoFill = function () {
     var locInput = $("#tripLocation");
@@ -43,7 +21,7 @@ var autoFill = function () {
     var queryURL = "https://maps.googleapis.com/maps/api/place/autocomplete/json?key=" + apiKey + "&input=" + locInput.val() + "&type=geocode";
 
     var predictionsView = $("#predictionsView");
-   
+
 
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/' + queryURL,
@@ -51,8 +29,8 @@ var autoFill = function () {
     }).done(function (response) {
         predictionsView.empty();
         if (response.status === "ZERO_RESULTS") {
-                $("#predictionsView").append("<p> Zero Results </p>");
-            }
+            $("#predictionsView").append("<p> Zero Results </p>");
+        }
 
         var renderPredictions = function () {
             for (var i = 0; i < response.predictions.length; i++) {
@@ -65,23 +43,23 @@ var autoFill = function () {
                 predictionsView.append(newPredict);
             }
             $(".prediction").click(autofillClick);
-            function autofillClick(){
+            function autofillClick() {
                 console.log("clickssss");
                 locInput.val(this.innerText);
                 predictionsView.hide();
             }
             $(".prediction").hover(hoverOn, hoverOff);
-            function hoverOn(){
+            function hoverOn() {
                 console.log("hoveron")
 
                 console.log(this)
                 $(this).addClass("autofillHover");
             }
-            function hoverOff(){
+            function hoverOff() {
                 console.log("hoveroff")
                 $(this).removeClass("autofillHover");
             }
-           
+
             // $(locField).blur(autofillBlur);
             // function autofillBlur(){
             //     console.log("focusout")
@@ -91,10 +69,11 @@ var autoFill = function () {
 
         }
         // renderPredictions();
-        if(locInput.val()!==""){
+        if (locInput.val() !== "") {
             predictionsView.show();
-            renderPredictions();}
-        else{predictionsView.hide()}
+            renderPredictions();
+        }
+        else { predictionsView.hide() }
     })
 
 
@@ -102,3 +81,34 @@ var autoFill = function () {
 }
 
 $("#tripLocation").keyup(autoFill);
+// -----ADD TRIP FORM -------
+function addTrip(event) {
+    event.preventDefault();
+    var tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
+
+    if(!tripsArray){
+        tripsArray = [];
+    }
+
+    var trip={
+        tripName: $("#tripName").val(),
+        destination: $("#tripLocation").val(),
+        startDate: $("#start-date").val(),
+        endDate: $("#end-date").val(),
+        packingList: {
+            Default: [],
+            Toiletries:[]
+        }
+    }
+
+    tripsArray.push(trip);
+    console.log(tripsArray);
+    localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
+    window.location.href = "Pack-List.html";
+}
+
+$("#create-trip-btn").click(addTrip);
+
+
+
+
