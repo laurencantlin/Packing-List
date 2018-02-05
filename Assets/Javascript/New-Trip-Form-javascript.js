@@ -81,7 +81,10 @@ function addTrip(event) {
         destination: $("#tripLocation").val(),
         startDate: $("#start-date").val(),
         endDate: $("#end-date").val(),
-        packingList: []
+        packingList: {
+            Default: [],
+            Toiletries:[]
+        }
     }
 
     tripsArray.push(trip);
