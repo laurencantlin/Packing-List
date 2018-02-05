@@ -1,0 +1,360 @@
+.wrapper {
+background: linear-gradient(to top right,#779E7E,#3E90C0);
+background-repeat: no-repeat;
+background-size: cover;
+margin-bottom: 0;
+height: 100vh;
+width: 100%
+    
+}
+
+body {
+background: linear-gradient(to top right,#779E7E,#3E90C0);
+background-repeat: no-repeat;
+background-size: cover;
+margin-bottom: 0;
+height: 100vh;
+width: 100%
+
+}
+
+#logo-home {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 175px;  
+}
+
+#home-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#1C4353;
+    border-color: white;
+    margin-top: 100px; 
+}
+
+/* end of home page */
+
+header {
+   background: #1C4353;
+   height: 60px;
+}
+.jumbotron, #advisor {
+    height: 120px;
+}
+.jumbotron {
+    height: 170px;
+}
+
+ #home-jumbo {
+    background-image: url("../Images/vaca1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+}
+#user-jumbo {
+    background-image: url("../Images/vaca2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+
+}
+
+#cancel-btn {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    border: solid, 3px, white;
+    float: right;
+    background-color: rgb(165, 33, 33);
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+ /* #trip-list {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    margin-top: 30px;
+} */
+/* 
+.tripcol {
+    padding: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black; */
+
+#create-btn {
+    background-color:#779E7E;
+    border-color: white;
+    color: white;
+}
+
+#add-item-btn {
+    color: white;
+    font: bold;
+    text-align: center;
+    font-size: 14px;
+    border: solid, 3px, white;
+    float: right;
+   width: 90px;
+   height: 30px;
+    background-color: #779E7E;
+    margin-top: 15px;
+    margin-right: 30px;
+    
+}
+
+#logo-header {
+    width: 110px;
+    padding-left: 20px;
+}
+
+
+#footer {
+    background-color: #1C4353;
+    height: 40px;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 10px;
+}
+
+
+/* Add trip form */
+#add-trip-form {
+    
+    max-width: 70%;
+    margin: auto;
+    margin-top: 80px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 5px;
+    background-color: #C1CBD0;
+}
+
+.form-group {
+    margin-top: -10px;
+    padding: 10px;
+  color: #1C4353;
+ 
+}
+.add-tag {
+     color: #1C4353;
+     font-family: 'Pattaya';
+     font-size: 40px;
+     text-align: center;
+ }
+
+ #create-trip-col{
+    margin-left: 35%;
+    margin-top: 30px;
+ }
+
+#create-trip-btn {
+    background-color:#779E7E;
+    color: white;
+    border-color: white;
+    width: 100px;
+
+}
+
+#next-btn {
+margin-bottom: 10px;
+background-color:#779E7E;
+color: white;
+width:70%;
+margin-left: 15%;
+margin-bottom: 20px;
+border-style: solid;
+border-width: 1px;
+border-color: white;
+
+}
+
+.trip-list-header {
+    font-family: "Racing Sans One";
+    color: white;
+    font-size: 30px;
+    margin-bottom: -10px;
+    background-color: #1C4353;
+    border-radius: 5px;
+    height: 35px;
+    padding-left: 10px;
+}
+
+#trip-list{
+    border-color: #1C4353;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+#added-trip-list {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#predictionsView {
+    max-width: 80%;
+    background-color: white;
+}
+
+p {
+    border-bottom: 1px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-color: #1C4353;
+    border-style: solid;   
+}
+
+p, #added-trip-name {
+    border-bottom: 1px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-color: #1C4353;
+    border-style: solid;
+
+}
+
+ #tripAdvisor {
+     margin: auto;
+     margin-right: 10px;
+ }
+
+ #suggestion {
+     border-style: solid;
+     border-width: 2px;
+     border-color: black;
+     padding: 10px; 
+ }
+
+ #create-list-btn {
+    margin-top: 150px;
+ }
+
+ .container {
+     width: 80%
+ }
+
+
+
+ #category-form {
+     margin: auto;
+    max-width: 80%;
+    margin-top: 80px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 5px;
+    background-color: #C1CBD0;
+    margin-bottom: 30px;
+ }
+.category-tag {
+    text-align: center;
+    font-family: "Pattaya";
+    color: white;
+    font-size: 18px;
+    margin-bottom:-3px;
+}
+
+#new-category-box {
+    background-color: #1C4353;
+    border-radius: 5px;
+    height: 90px;
+    display: inline-block;
+    width: 170px;
+    margin-left: 18%;
+    margin-bottom: 10%;
+    /* visibility: hidden; */
+  
+}
+
+ #category-btn {
+    margin-bottom: 10px;
+    background-color:#1C4353;
+    color: white;
+    width:70%;
+   margin-left: 15%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+  padding-top: 3px;
+ }
+
+ #create-category-btn{
+     width: 100px;
+     background-color: #779E7E;
+     color: white;
+     font-size: 10px;
+     height: 23px;
+     text-align: center;
+     border-color: white;
+     margin-top: -5px;
+      
+ }
+
+ #create-category-col {
+    margin-top: -15px;
+    margin-left: 10px;
+ }
+
+ #newCategoryName {
+     height: 20px;
+     margin-top: 5px;
+     
+ }
+
+ #add-category-btn {
+     background-color: #367f9c;
+    margin: auto;
+    color: white;
+    width:70%;
+   margin-left: 15%;
+  margin-bottom: 10px;
+  border-color: white;
+  font-size: 12px;
+ }
+
+
+ #back-btn {
+     background-color: #367f9c;
+     color: white;
+     text-align: center;
+     font-size: 15px;
+     border: solid, 3px, white;
+     float: right;
+     margin-top: 10px;
+     margin-right: 30px;
+ }
+
+ #nextTripName {
+    font-family: "Racing Sans One";
+    color: white;
+    font-size: 20%;
+    text-align: center;
+    margin-top: -30px;    
+ }
+ 
+ #nextTripLocation {
+    margin-top: -5%;
+    color: white;
+    font-family: "Racing Sans One";
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 3px 2px 3px #333; 
+    text-transform: uppercase;
+  
+ }
+
+ #nextTripDate {
+    font-family: "Assistant";
+    font-size: 20px;
+    text-align: center;
+    color: white; 
+    margin-top: -15px;  
+}
