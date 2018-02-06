@@ -5,17 +5,16 @@ function renderPackList() {
     console.log(SetTrip);
     var cats = Object.keys(SetTrip.packingList);
     // console.log(cats);
-    var selectedCat = $("#categ-dropdown-btn").text().trim()
-    var newItem = $("#item-input").val().trim();
+    var tripName = SetTrip.tripName
 
     for (var i = 0; i < cats.length; i++) {
         var cat = cats[i];
 
         var categArray = SetTrip.packingList[cats[i]]
-        if (cats[i] == selectedCat) {
-            showInCateg(cats[i]);
-            console.log(cats[i]);
-        }
+        // if (cats[i] == selectedCat) {
+        //     showInCateg(cats[i]);
+        //     console.log(cats[i]);
+        // }
     }
 }
 renderPackList();
@@ -55,8 +54,6 @@ function addItem(event) {
     var selectedCat = $("#categ-dropdown-btn").text().trim()
     var newItem = $("#item-input").val().trim();
 
-    
-
     function renderCatPanels(categg) {
         var newPanel = $("#panels-view").html()
         $("#panels-view").empty();
@@ -65,7 +62,6 @@ function addItem(event) {
 
     for (var i = 0; i < cats.length; i++) {
         var cat = cats[i];
-    
         var categArray = SetTrip.packingList[cats[i]]
         // var catR =Object.entries(SetTrip.packingList);
         // showInCateg(cats[i]);
@@ -73,9 +69,6 @@ function addItem(event) {
         if (cats[i] == selectedCat) {
             showInCateg(cats[i]);
             console.log(cats[i]);
-            // categItemsArr = SetTrip.packingList[cats[i]];
-            // console.log(categItemsArr);
-
             if (newItem) {
                 categArray.push(newItem);
                 SetTrip.packingList[cats[i]] = categArray
@@ -87,5 +80,14 @@ function addItem(event) {
 
     // SetTrip[i].packingList.Default.push(item);
     localStorage.setItem("SetTrip", JSON.stringify(SetTrip));
+
+    var tripArray = JSON.parse(localStorage.getItem("Trips Array"));
+
+    for(var i = 0 ; i < tripArray.length; i++){
+        if (tripArray[i].tripName === SetTrip.tripName){
+            tripArray[i]=SetTrip
+        }
+    }
+    localStorage.setItem("Trips Array", JSON.stringify(tripArray));
 }
 $("#add-item").click(addItem);
