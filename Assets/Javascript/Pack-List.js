@@ -1,7 +1,11 @@
 // -----------------------------------
 //  RENDER PACKLIST 
 function renderPackList() {
-    var SetTrip = JSON.parse(localStorage.getItem("SetTrip"));
+    var parsed = [{packingList: {Default:[]}}];
+    if(localStorage.getItem("SetTrip")){
+        parsed = JSON.parse(localStorage.getItem("SetTrip"));
+    }
+    var SetTrip = parsed
     for (var i = 0; i < SetTrip.length; i++) {
         var items = SetTrip[i].packingList.Default;
         console.log("hi")
