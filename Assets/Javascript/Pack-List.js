@@ -35,6 +35,13 @@ function renderPackList() {
 renderPackList();
 
 // -----------------------------------
+// SET CATEGORY DROPDOWN
+function setCateg() {
+    console.log("setcat")
+}
+$(".set-category-btn").click(setCateg);
+
+// -----------------------------------
 // ADD ITEM TO PACKLIST
 function addItem(event) {
     event.preventDefault();
@@ -44,18 +51,16 @@ function addItem(event) {
 
     var showInCateg = function (key) {
         category = key;
-        selectedCat = $("#categ-dropdown-btn")
 
         itemView = $("." + category);
-        console.log(category);
-        var newItem = $("#item-input").val()
-        console.log(newItem);
-        var newItemRow = $("<div class=row>");
-        newItemRow.text(newItem);
-        var checkBox = '<input type="checkbox" aria-label="...">'
-        newItemRow.prepend(checkBox);
-        itemView.append(newItemRow);
-        // return selectedCat.text() == category;
+        var newItem = $("#item-input").val().trim();
+        if (newItem) {
+            var newItemRow = $("<div class=row>");
+            newItemRow.text(newItem);
+            var checkBox = '<input type="checkbox" aria-label="...">'
+            newItemRow.prepend(checkBox);
+            itemView.append(newItemRow);
+        }
     }
 
     for (var i = 0; i < cats.length; i++) {
@@ -65,28 +70,9 @@ function addItem(event) {
             showInCateg(cats[i]);
         }
     }
-
-
-
-
-// var funky = function (key) {
-//     console.log(key, SetTrip.packingList[key]);
-// }
-
-// Object.keys(SetTrip.packingList).every(showInCateg);
-
-// SetTrip[i].packingList.Default.push(item);
-// console.log(SetTrip[i].packingList);
-localStorage.setItem("SetTrip", JSON.stringify(SetTrip));
-
+    // SetTrip[i].packingList.Default.push(item);
+    // console.log(SetTrip[i].packingList);
+    localStorage.setItem("SetTrip", JSON.stringify(SetTrip));
 }
 $("#add-item").click(addItem);
-
-
-// -----------------------------------
-// SET CATEGORY DROPDOWN
-function setCateg() {
-    console.log("setcat")
-}
-$(".set-category-btn").click(setCateg);
 
