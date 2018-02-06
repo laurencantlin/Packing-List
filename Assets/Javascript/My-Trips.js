@@ -1,13 +1,13 @@
 var trip;
+var tripsArray = [];
 function renderTrips(){
-    var parse = []
+    var parse = undefined;
     if(localStorage.getItem("Trips Array")){
         parse = JSON.parse(localStorage.getItem("Trips Array"))
     }
-    var tripsArray = parse
-    console.log(tripsArray);
-    if(!tripsArray){
-        tripsArray = [];
+
+    if(parse){
+        tripsArray = parse
     }
 
     for (var i=0; i<tripsArray.length; i++){
