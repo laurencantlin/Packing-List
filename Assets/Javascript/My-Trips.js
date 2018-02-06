@@ -17,7 +17,7 @@ function renderTrips(){
     }
 
     function clickTrip(){
-        var firedTrip = $(this).text();
+        var firedTrip = $(this).text().trim();
 
         for (var i=0; i<tripsArray.length; i++){
             if(tripsArray[i].tripName === firedTrip){
