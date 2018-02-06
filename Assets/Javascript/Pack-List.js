@@ -37,7 +37,12 @@ renderPackList();
 // -----------------------------------
 // SET CATEGORY DROPDOWN
 function setCateg() {
-    console.log("setcat")
+  
+  var selectedCatBtn=$("#categ-dropdown-btn");
+  var setCategTo = $(this).text() + " ";
+  selectedCatBtn.text(setCategTo);
+  var spanCaret = $("<span> ").addClass("caret");
+  selectedCatBtn.append(spanCaret);
 }
 $(".set-category-btn").click(setCateg);
 
@@ -65,6 +70,16 @@ function addItem(event) {
 
     for (var i = 0; i < cats.length; i++) {
         var cat = cats[i];
+        function renderCatPanels(categg) {
+            console.log(categg)
+            var newPanel = $("#panels-view").html()
+            $("#panels-view").empty();
+
+            console.log(newPanel);
+            // $("#panels-view").append("<br>");
+            $("#panels-view").append(newPanel);
+        }
+        renderCatPanels(cats[i]);
         if (cats[i] == selectedCat) {
             console.log("his");
             showInCateg(cats[i]);
@@ -75,4 +90,3 @@ function addItem(event) {
     localStorage.setItem("SetTrip", JSON.stringify(SetTrip));
 }
 $("#add-item").click(addItem);
-
