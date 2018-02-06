@@ -18,13 +18,12 @@ function renderTrips(){
 
     function clickTrip(){
         var firedTrip = $(this).text().trim();
-
         for (var i=0; i<tripsArray.length; i++){
             if(tripsArray[i].tripName === firedTrip){
                 console.log(firedTrip)
                 localStorage.setItem("SetTrip", JSON.stringify(tripsArray[i]));
             }
-        // window.location.href = "Pack-List.html";
+        window.location.href = "Pack-List.html";
      }
     }
     $(document).on("click", ".added-trip-name", clickTrip);

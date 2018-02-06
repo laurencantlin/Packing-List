@@ -1,18 +1,3 @@
-// function formData() {
-//     var formInput = 
-//     document.getElementById("tripName");
-//     var text ""
-// }
-
-// function renderTripName () {
-//     var tripNameInput = $("tripName");
-
-//     document.getElementById("create-trip-btn").addEventListener("click", fu)
-
-// }
-// console.log(renderTripName);
-
-
 //AUTOFILL FUNCTION
 var autoFill = function () {
     var locInput = $("#tripLocation");
@@ -96,21 +81,18 @@ function addTrip(event) {
         startDate: $("#start-date").val(),
         endDate: $("#end-date").val(),
         packingList: {
-
             Default: [],
             Toiletries: [],
             Clothes: [],
             Electronics: [],
-
         }
     }
-
+    if (trip)
 
     tripsArray.push(trip);
     console.log(tripsArray);
     localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
     window.location.href = "Pack-List.html";
-
 }
 $("#create-trip-btn").click(addTrip);
 
