@@ -23,18 +23,19 @@ function renderTrips(){
         $("#trip-row-" +i ).append(tripText);
         $("#trip-row-" +i).append(`<button class= "removeTrip" data-name=${dataName}>Remove</button>`);
     }
-        
+}        
 
-    function clickTrip(){
-        console.log(this);
-         trip=this.tripName;
-        window.location.href = "Pack-List.html";
-        return trip;
+function clickTrip(){
+    var firedTrip = $(this).text().trim();
+    for (var i=0; i<tripsArray.length; i++){
+        if(tripsArray[i].tripName === firedTrip){
+            console.log(firedTrip)
+            localStorage.setItem("SetTrip", JSON.stringify(tripsArray[i]));
+        }
+    window.location.href = "Pack-List.html";
     }
-    
-    $(".added-trip-name").click(clickTrip);
 }
-
+$(document).on("click", ".added-trip-name", clickTrip);
 
 $(document).on("click", ".removeTrip", function(){
     var tripName =  $(this).attr("data-name")
@@ -42,11 +43,12 @@ $(document).on("click", ".removeTrip", function(){
     var tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
     var updatedArray = tripsArray.filter( trip => trip.tripName != tripWithoutDashes);
 
-    localStorage.setItem("Trips Array", updatedArray);
+    localStorage.setItem("Trips Array", JSON.stringify(updatedArray));
 
 
     $(`.` + tripName).remove();
 
 });
+
 
 renderTrips();
