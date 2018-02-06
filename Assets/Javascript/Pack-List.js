@@ -2,27 +2,20 @@
 //  RENDER PACKLIST 
 function renderPackList() {
     var SetTrip = JSON.parse(localStorage.getItem("SetTrip"));
-    for (var i = 0; i < SetTrip.length; i++) {
-        var items = SetTrip[i].packingList.Default;
-        console.log("hi")
+    console.log(SetTrip);
+    var cats = Object.keys(SetTrip.packingList);
+    // console.log(cats);
+    var selectedCat = $("#categ-dropdown-btn").text().trim()
+    var newItem = $("#item-input").val().trim();
 
-        var items = SetTrip[i].packingList.Default;
-        renderTripItems();
-        function renderTripItems() {
-            console.log(items)
+    for (var i = 0; i < cats.length; i++) {
+        var cat = cats[i];
+
+        var categArray = SetTrip.packingList[cats[i]]
+        if (cats[i] == selectedCat) {
+            showInCateg(cats[i]);
+            console.log(cats[i]);
         }
-    }
-
-    for (var i = 0; i < SetTrip.length; i++) {
-        console.log(SetTrip[i]);
-        var newItemRow = $("<div class=row>");
-        newItemRow.text(items[i]);
-        var checkBox = '<input type="checkbox" aria-label="...">'
-        newItemRow.prepend(checkBox);
-        $("#item-view").append(newItemRow);
-        // items.push(items);
-        console.log(tripsArray[i]);
-        // localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
     }
 }
 renderPackList();
@@ -39,28 +32,30 @@ function setCateg() {
 $(".set-category-btn").click(setCateg);
 
 // -----------------------------------
+function showInCateg(key) {
+    var newItem = $("#item-input").val().trim();
+
+    category = key;
+    // console.log(categArray);
+    itemView = $("." + category);
+    if (newItem) {
+        var newItemRow = $("<div class=row>");
+        newItemRow.text(newItem);
+        var checkBox = '<input type="checkbox" aria-label="..."> '
+        newItemRow.prepend(checkBox);
+        itemView.append(newItemRow);
+    }
+}
 // ADD ITEM TO PACKLIST
 function addItem(event) {
     event.preventDefault();
     var SetTrip = JSON.parse(localStorage.getItem("SetTrip"));
     var cats = Object.keys(SetTrip.packingList);
+    // console.log(cats);
     var selectedCat = $("#categ-dropdown-btn").text().trim()
-    // console.log(SetTrip);
-    var showInCateg = function (key) {
-        category = key;
-        console.log(categArray);
+    var newItem = $("#item-input").val().trim();
 
-        itemView = $("." + category);
-        var newItem = $("#item-input").val().trim();
-        if (newItem) {
-            var newItemRow = $("<div class=row>");
-            newItemRow.text(newItem);
-            var checkBox = '<input type="checkbox" aria-label="...">'
-            newItemRow.prepend(checkBox);
-            itemView.append(newItemRow);
-            categArray.push(newItem);
-        }
-    }
+    
 
     function renderCatPanels(categg) {
         var newPanel = $("#panels-view").html()
@@ -69,20 +64,28 @@ function addItem(event) {
     }
 
     for (var i = 0; i < cats.length; i++) {
-        var categArray =Object.entries(SetTrip.packingList)[i];
-
         var cat = cats[i];
+    
+        var categArray = SetTrip.packingList[cats[i]]
+        // var catR =Object.entries(SetTrip.packingList);
         // showInCateg(cats[i]);
-        renderCatPanels(cats[i]);
+        // renderCatPanels(cats[i]);
         if (cats[i] == selectedCat) {
             showInCateg(cats[i]);
-            console.log(categArray);
-            console.log(Object.entries(categArray));  
+            console.log(cats[i]);
+            // categItemsArr = SetTrip.packingList[cats[i]];
+            // console.log(categItemsArr);
+
+            if (newItem) {
+                categArray.push(newItem);
+                SetTrip.packingList[cats[i]] = categArray
+                console.log(SetTrip.packingList[cats[i]])
+            }
         }
     }
+    console.log(SetTrip.packingList);
 
     // SetTrip[i].packingList.Default.push(item);
-    // console.log(SetTrip[i].packingList);
     localStorage.setItem("SetTrip", JSON.stringify(SetTrip));
 }
 $("#add-item").click(addItem);

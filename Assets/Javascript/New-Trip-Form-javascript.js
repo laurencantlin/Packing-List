@@ -87,7 +87,6 @@ function addTrip(event) {
             Electronics: [],
         }
     }
-    if (trip)
 
     tripsArray.push(trip);
     console.log(tripsArray);
