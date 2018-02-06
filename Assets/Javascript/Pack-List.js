@@ -49,6 +49,6 @@ function renderPackList() {
 }
 
 
-renderPackList();
-$("#add-item").click(addItem);
-console.log(trip);
+// renderPackList();
+// $("#add-item").click(addItem);
+// console.log(trip);
