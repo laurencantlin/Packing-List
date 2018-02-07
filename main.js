@@ -12,13 +12,10 @@
 //     console.log(result);
 
 //     var weatherP = $( "#weatherInfo" )
-//     weatherP.text("temp:" + result.main.temp );
+//     weatherP.text(result.main.temp );
     
 //     var cloudsP = $( "#weatherInfo2" )
-//     cloudsP.text("clouds:" + result.weather[0].description);
-
-//     var windP = $( "#weatherInfo3" )
-//     windP.text("Wind Speed:" + result.wind.speed);
+//     cloudsP.text(result.weather[0].description);
 
 //    });
 //   });
@@ -26,3 +23,13 @@
   
 // });
 
+
+   // push trip info to trip info div
+
+    // var updatedTripLoc = $("#nextTripLocation");
+    // var updatedTripName = $("#nextTripName");
+    // var updateTripDate = $("#nextTripDate");
+
+    // function renderTripInfo () {
+    //     var getName =  
+    // }

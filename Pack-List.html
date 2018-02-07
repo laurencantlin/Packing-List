@@ -24,7 +24,7 @@
             <h2> Trip Destination</h2>
         </div>
         <div class="col-md-6" id="nextTripName">
-            <h1> Trip Name</h1>
+            <h1 id="trip-name"> Trip Name</h1>
         </div>
         <div class="col-md-6" id="nextTripDate">
             <h4>Trip start/end date</h4>
@@ -34,43 +34,64 @@
     <div class="jumbotron" id="weather"> Weather
         <div class="row">
 
-            <label for="Search">City</label>
-            <input type="text" id="citySearch">
-            <br>
-            <input id="weatherSearch" type="submit" value="Weather Search">
-            <br>
-            <div class="col-xs-6">
-                <h3 id="weatherInfo"> </h3>
-            </div>
-            <div class="col-xs-6">
-                <h3 id="weatherInfo2"> </h3>
-            </div>
-            <!-- <h3 id = "weatherInfo3"> </h3>  doesn't show windspeed-->
-        </div>
-    </div>
+    <label for="Search">City</label> 
+   <input type="text" id="citySearch"><br>
+    <input id="weatherSearch" type="submit" value="Weather Search"><br>
+    <h3 id = "weatherInfo"> </h3>
+    <h3 id = "weatherInfo2"> </h3>
+
+    <!-- <div class="jumbotron" id="advisor"> Trip Advisor sugesstions
+        <span>(carousel)</span>
+    </div> -->
 
 
 
     <div class="container">
         <div class="row">
             <div class="col-xs-12 input-group">
+                <!-- INPUT ITEM FORM FIELD: -->
                 <input type="text" class="form-control" aria-label="..." id="item-input">
+
                 <div class="input-group-btn">
                     <!-- Button and dropdown menu -->
                     <!-- <button type="button" class="btn btn-default">Action</button> -->
-                    <button type="button" class="btn btn-default " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clothes
+
+                    <!--SELECTED CATEGORY BUTTON  -->
+                    <button type="button" class="btn btn-default " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="categ-dropdown-btn">Clothes
                         <span class="caret"></span>
                     </button>
+
+                    <!-- +ADD NEW ITEM ICON BUTTON -->
                     <button class="btn btn-primary" type="button" id="add-item">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </button>
+
+                    <!-- SELECT CATEGORY DROPDOWN LIST  -->
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#">Clothes</a>
+                            <a href="#" class="set-category-btn">Clothes</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Toiletries</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Electronics</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Medicine</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Travel Documents</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Shoes</a>
+                        </li>
+                        <li>
+                            <a href="#" class="set-category-btn">Outdoor</a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#">Separated link</a>
+                            <a href="#" id="add-categ-btn">Add category...</a>
                         </li>
                     </ul>
                     <!-- </div> -->
@@ -78,19 +99,54 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+
+        <div class="row" id="panels-view">
             <br>
-            <div class="panel panel-default">
+            <div class="panel panel-default categ-panel">
                 <div class="panel-heading">
                     <h3 class="panel-title">Clothes</h3>
                 </div>
                 <div class="panel-body">
+                    <!-- /.col-lg-6 -->
+                    <div class="col-lg-12 categ-view Clothes" id="item-view-Clothes">
+                        <div class="row">
+                            <!-- <input type="checkbox" aria-label="...">
+                            <span class="item">hi</span> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Toiletries</h3>
+                </div>
+                <div class="panel-body">
 
                     <!-- /.col-lg-6 -->
-                    <div class="col-lg-12" id="item-view">
+                    <div class="col-lg-12 categ-view Toiletries" id="item-view-Toiletries">
+                        <div class="row">
+                            <!-- <input type="checkbox" aria-label="...">
+                            <span class="item">hi</span> -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="panel panel-default categ-panel empty hide">
+                <div class="panel-heading">
+                    <h3 class="panel-title"></h3>
+                </div>
+                <div class="panel-body">
+
+                    <!-- /.col-lg-6 -->
+                    <div class="col-lg-12 categ-view empty" id="item-view-">
                         <div class="row">
                             <input type="checkbox" aria-label="...">
-                            <span class="item">hi</span>
+                            <span class="item"></span>
                         </div>
 
                     </div>
@@ -98,14 +154,13 @@
 
             </div>
         </div>
-    </div>
 
 
-    <div class="row" id="category-btn">
-        <div class="col-xs-4 col-xs-offset-8">
-            <a href="choose-category.html" button type="button" class="btn-default">+ Add Item</a>
+        <div class="row" id="category-btn">
+            <div class="col-xs-4 col-xs-offset-8">
+                <a href="choose-category.html" button type="button" class="btn-default">+ Add Item</a>
+            </div>
         </div>
-    </div>
 
     </div>
 
@@ -121,6 +176,8 @@
         crossorigin="anonymous"></script>
         <script type="text/javascript" src="Assets/javascript/convert-temp.js"></script>
     <script type="text/javascript" src="assets/Javascript/Pack-List.js"></script>
+   
+
 
 </body>
 
