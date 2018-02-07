@@ -13,8 +13,10 @@ var autoFill = function () {
         method: "GET",
     }).done(function (response) {
         predictionsView.empty();
+        console.log(response);
         if (response.status === "ZERO_RESULTS") {
             $("#predictionsView").append("<p> Zero Results </p>");
+        
         }
 
         var renderPredictions = function () {
