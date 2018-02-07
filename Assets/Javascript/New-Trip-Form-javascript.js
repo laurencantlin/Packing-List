@@ -13,8 +13,10 @@ var autoFill = function () {
         method: "GET",
     }).done(function (response) {
         predictionsView.empty();
+        console.log(response);
         if (response.status === "ZERO_RESULTS") {
             $("#predictionsView").append("<p> Zero Results </p>");
+        
         }
 
         var renderPredictions = function () {
@@ -70,17 +72,17 @@ $("#tripLocation").keyup(autoFill);
 function addTrip(event) {
     event.preventDefault();
     var tripsArray = [];
-     if (localStorage.getItem("Trips Array")) {
+    if (localStorage.getItem("Trips Array")) {
         tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
 
     }
 
     $.ajax({
-       type: "GET",
+        type: "GET",
         url: 'https://cors-anywhere.herokuapp.com/' + "http://api.openweathermap.org/data/2.5/weather?q=" + $("#tripLocation").val() + "&appid=8a03f969205ca8695bf44e2bd8b84126",
-     }).done(function(result){
+    }).done(function (result) {
         console.log(result);
-        var temp = Math.floor(result.main.temp * 9/5 - 459.67);
+        var temp = Math.floor(result.main.temp * 9 / 5 - 459.67);
         var trip = {
             tripName: $("#tripName").val(),
             destination: $("#tripLocation").val(),
@@ -89,17 +91,23 @@ function addTrip(event) {
             weather: temp,
             packingList: {
                 Default: [],
-                Toiletries: [],
+                Medicine: [],
+                Documents:[],
                 Clothes: [],
                 Electronics: [],
+                Shoes:[],
+                Outdoor:[],
+                Toiletries: [],
             }
         }
 
         tripsArray.push(trip);
         console.log(tripsArray);
         localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
+        localStorage.setItem("SetTrip", JSON.stringify(trip));
+
         window.location.href = "Pack-List.html";
-        
+
     });
 }
 $("#create-trip-btn").click(addTrip);

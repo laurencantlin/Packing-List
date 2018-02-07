@@ -1,36 +1,38 @@
 // -----------------------------------
 //  RENDER PACKLIST 
 function renderPackList() {
-    var parsed = [{packingList: {Default:[]}}];
-    if(localStorage.getItem("SetTrip")){
+    var parsed = [{ packingList: { Default: [] } }];
+    if (localStorage.getItem("SetTrip")) {
         parsed = JSON.parse(localStorage.getItem("SetTrip"));
     }
     var SetTrip = parsed
-    for (var i = 0; i < SetTrip.length; i++) {
-        var items = SetTrip[i].packingList.Default;
-        console.log("hi")
-
-        var items = SetTrip[i].packingList.Default;
-        renderTripItems();
-        function renderTripItems() {
-            console.log(items)
+    var cats = Object.keys(SetTrip.packingList);
+    console.log(cats)
+    for (var i = 0; i < cats.length; i++) {
+        var items = SetTrip.packingList[cats[i]];
+        if (items.length !== 0) {
+            renderCatPanels(cats[i]);
         }
-    }
-
-    for (var i = 0; i < SetTrip.length; i++) {
-        console.log(SetTrip[i]);
-        var newItemRow = $("<div class=row>");
-        newItemRow.text(items[i]);
-        var checkBox = '<input type="checkbox" aria-label="...">'
-        newItemRow.prepend(checkBox);
-        $("#item-view").append(newItemRow);
-        // items.push(items);
-        console.log(tripsArray[i]);
-        // localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
+        for (var i2 = 0; i2 < items.length; i2++) {
+            showInCateg(cats[i], items[i2]);
+        }
     }
 }
 renderPackList();
+function renderCatPanels(categg) {
+    var newPanel = $("<div class='panel panel-default categ-panel'>")
+    panelClass = "categ-" + categg
+    newPanel.addClass(panelClass);
 
+    var newPanelHTML = $("#panelHTML").html();
+    // $("#panels-view").empty();
+    newPanel.html(newPanelHTML);
+    $("#panels-view").append(newPanel);
+    $("." + panelClass + " > >h3.panel-title").text(categg);
+    // $("."+panelClass+" >panel-body >").text(categg);
+    $("." + panelClass + " >div.panel-body >").addClass(categg);
+
+}
 // -----------------------------------
 // SET CATEGORY DROPDOWN
 function setCateg() {
@@ -43,50 +45,62 @@ function setCateg() {
 $(".set-category-btn").click(setCateg);
 
 // -----------------------------------
+function showInCateg(category, newItem) {
+
+    itemView = $("." + category);
+    if (newItem) {
+        var newItemRow = $("<div class=row>");
+        newItemRow.text(newItem);
+        var checkBox = '<input type="checkbox" aria-label="..."> '
+        newItemRow.prepend(checkBox);
+        itemView.append(newItemRow);
+    }
+
+}
 // ADD ITEM TO PACKLIST
 function addItem(event) {
     event.preventDefault();
     var SetTrip = JSON.parse(localStorage.getItem("SetTrip"));
     var cats = Object.keys(SetTrip.packingList);
+    // console.log(cats);
     var selectedCat = $("#categ-dropdown-btn").text().trim()
-    // console.log(SetTrip);
-    var showInCateg = function (key) {
-        category = key;
-        console.log(categArray);
-
-        itemView = $("." + category);
-        var newItem = $("#item-input").val().trim();
-        if (newItem) {
-            var newItemRow = $("<div class=row>");
-            newItemRow.text(newItem);
-            var checkBox = '<input type="checkbox" aria-label="...">'
-            newItemRow.prepend(checkBox);
-            itemView.append(newItemRow);
-            categArray.push(newItem);
-        }
-    }
-
-    function renderCatPanels(categg) {
-        var newPanel = $("#panels-view").html()
-        $("#panels-view").empty();
-        $("#panels-view").append(newPanel);
-    }
-
+    var newItem = $("#item-input").val().trim();
     for (var i = 0; i < cats.length; i++) {
-        var categArray =Object.entries(SetTrip.packingList)[i];
-
         var cat = cats[i];
-        // showInCateg(cats[i]);
-        renderCatPanels(cats[i]);
-        if (cats[i] == selectedCat) {
-            showInCateg(cats[i]);
-            console.log(categArray);
-            console.log(Object.entries(categArray));  
+        var categArray = SetTrip.packingList[cat]
+        console.log(cats[i])
+
+        var newItem = $("#item-input").val().trim();
+        var items = SetTrip.packingList[cats[i]];
+        if (cat == selectedCat) {
+            console.log(items)
+
+            if (items.length == 0) {
+                renderCatPanels(cats[i]);
+                console.log(cats[i]);
+            }
+            if (newItem) {
+                showInCateg(cats[i], newItem);
+
+                categArray.push(newItem);
+                SetTrip.packingList[cats[i]] = categArray
+                console.log(SetTrip.packingList[cats[i]])
+            }
         }
     }
+
+    console.log(SetTrip.packingList);
 
     // SetTrip[i].packingList.Default.push(item);
-    // console.log(SetTrip[i].packingList);
     localStorage.setItem("SetTrip", JSON.stringify(SetTrip));
+
+    var tripArray = JSON.parse(localStorage.getItem("Trips Array"));
+
+    for (var i = 0; i < tripArray.length; i++) {
+        if (tripArray[i].tripName === SetTrip.tripName) {
+            tripArray[i] = SetTrip
+        }
+    }
+    localStorage.setItem("Trips Array", JSON.stringify(tripArray));
 }
 $("#add-item").click(addItem);
