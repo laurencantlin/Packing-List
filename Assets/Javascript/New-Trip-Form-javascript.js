@@ -69,29 +69,41 @@ $("#tripLocation").keyup(autoFill);
 // SUBMIT ADD TRIP FORM FUNCTION
 function addTrip(event) {
     event.preventDefault();
-    var tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
+    var tripsArray = [];
+    if (localStorage.getItem("Trips Array")) {
+        tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
 
-    if (!tripsArray) {
-        tripsArray = [];
     }
 
-    var trip = {
-        tripName: $("#tripName").val(),
-        destination: $("#tripLocation").val(),
-        startDate: $("#start-date").val(),
-        endDate: $("#end-date").val(),
-        packingList: {
-            Default: [],
-            Toiletries: [],
-            Clothes: [],
-            Electronics: [],
+    $.ajax({
+        type: "GET",
+        url: 'https://cors-anywhere.herokuapp.com/' + "http://api.openweathermap.org/data/2.5/weather?q=" + $("#tripLocation").val() + "&appid=8a03f969205ca8695bf44e2bd8b84126",
+    }).done(function (result) {
+        console.log(result);
+        var temp = Math.floor(result.main.temp * 9 / 5 - 459.67);
+        var trip = {
+            tripName: $("#tripName").val(),
+            destination: $("#tripLocation").val(),
+            startDate: $("#start-date").val(),
+            endDate: $("#end-date").val(),
+            weather: temp,
+            packingList: {
+
+                Clothes: [],
+                Default: [],
+                Electronics: [],
+                Toiletries: [],
+            }
         }
-    }
 
-    tripsArray.push(trip);
-    console.log(tripsArray);
-    localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
-    window.location.href = "Pack-List.html";
+        tripsArray.push(trip);
+        console.log(tripsArray);
+        localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
+        localStorage.setItem("SetTrip", JSON.stringify(trip));
+
+        window.location.href = "Pack-List.html";
+
+    });
 }
 $("#create-trip-btn").click(addTrip);
 

@@ -1,20 +1,20 @@
 // -----------------------------------
 //  RENDER PACKLIST 
 function renderPackList() {
-    var SetTrip = JSON.parse(localStorage.getItem("SetTrip"));
-    console.log(SetTrip);
+    var parsed = [{ packingList: { Default: [] } }];
+    if (localStorage.getItem("SetTrip")) {
+        parsed = JSON.parse(localStorage.getItem("SetTrip"));
+    }
+    var SetTrip = parsed
     var cats = Object.keys(SetTrip.packingList);
-    // console.log(cats);
-    var tripName = SetTrip.tripName
+    console.log(SetTrip)
 
     for (var i = 0; i < cats.length; i++) {
-        var cat = cats[i];
-
-        var categArray = SetTrip.packingList[cats[i]]
-        // if (cats[i] == selectedCat) {
-        //     showInCateg(cats[i]);
-        //     console.log(cats[i]);
-        // }
+        var items = SetTrip.packingList[cats[i]];
+        console.log(cats[i],items[0]);
+        for (var i2 = 0; i2 < items.length; i2++) {
+            showInCateg(cats[i], items[i2]);
+        }
     }
 }
 renderPackList();
@@ -31,10 +31,10 @@ function setCateg() {
 $(".set-category-btn").click(setCateg);
 
 // -----------------------------------
-function showInCateg(key) {
-    var newItem = $("#item-input").val().trim();
+function showInCateg(category, newItem) {
+    // var newItem = $("#item-input").val().trim();
 
-    category = key;
+    // category = key;
     // console.log(categArray);
     itemView = $("." + category);
     if (newItem) {
@@ -63,11 +63,11 @@ function addItem(event) {
     for (var i = 0; i < cats.length; i++) {
         var cat = cats[i];
         var categArray = SetTrip.packingList[cats[i]]
-        // var catR =Object.entries(SetTrip.packingList);
-        // showInCateg(cats[i]);
-        // renderCatPanels(cats[i]);
+        var newItem = $("#item-input").val().trim();
+
         if (cats[i] == selectedCat) {
-            showInCateg(cats[i]);
+
+            showInCateg(cats[i], newItem);
             console.log(cats[i]);
             if (newItem) {
                 categArray.push(newItem);
@@ -76,6 +76,7 @@ function addItem(event) {
             }
         }
     }
+
     console.log(SetTrip.packingList);
 
     // SetTrip[i].packingList.Default.push(item);
@@ -83,9 +84,9 @@ function addItem(event) {
 
     var tripArray = JSON.parse(localStorage.getItem("Trips Array"));
 
-    for(var i = 0 ; i < tripArray.length; i++){
-        if (tripArray[i].tripName === SetTrip.tripName){
-            tripArray[i]=SetTrip
+    for (var i = 0; i < tripArray.length; i++) {
+        if (tripArray[i].tripName === SetTrip.tripName) {
+            tripArray[i] = SetTrip
         }
     }
     localStorage.setItem("Trips Array", JSON.stringify(tripArray));
