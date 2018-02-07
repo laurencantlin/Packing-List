@@ -7,18 +7,32 @@ function renderPackList() {
     }
     var SetTrip = parsed
     var cats = Object.keys(SetTrip.packingList);
-    console.log(SetTrip)
-
+    console.log(cats)
     for (var i = 0; i < cats.length; i++) {
         var items = SetTrip.packingList[cats[i]];
-        console.log(cats[i],items[0]);
+        if (items.length !== 0) {
+            renderCatPanels(cats[i]);
+        }
         for (var i2 = 0; i2 < items.length; i2++) {
             showInCateg(cats[i], items[i2]);
         }
     }
 }
 renderPackList();
+function renderCatPanels(categg) {
+    var newPanel = $("<div class='panel panel-default categ-panel'>")
+    panelClass = "categ-" + categg
+    newPanel.addClass(panelClass);
 
+    var newPanelHTML = $("#panelHTML").html();
+    // $("#panels-view").empty();
+    newPanel.html(newPanelHTML);
+    $("#panels-view").append(newPanel);
+    $("." + panelClass + " > >h3.panel-title").text(categg);
+    // $("."+panelClass+" >panel-body >").text(categg);
+    $("." + panelClass + " >div.panel-body >").addClass(categg);
+
+}
 // -----------------------------------
 // SET CATEGORY DROPDOWN
 function setCateg() {
@@ -32,10 +46,7 @@ $(".set-category-btn").click(setCateg);
 
 // -----------------------------------
 function showInCateg(category, newItem) {
-    // var newItem = $("#item-input").val().trim();
 
-    // category = key;
-    // console.log(categArray);
     itemView = $("." + category);
     if (newItem) {
         var newItemRow = $("<div class=row>");
@@ -44,6 +55,7 @@ function showInCateg(category, newItem) {
         newItemRow.prepend(checkBox);
         itemView.append(newItemRow);
     }
+
 }
 // ADD ITEM TO PACKLIST
 function addItem(event) {
@@ -53,23 +65,23 @@ function addItem(event) {
     // console.log(cats);
     var selectedCat = $("#categ-dropdown-btn").text().trim()
     var newItem = $("#item-input").val().trim();
-
-    function renderCatPanels(categg) {
-        var newPanel = $("#panels-view").html()
-        $("#panels-view").empty();
-        $("#panels-view").append(newPanel);
-    }
-
     for (var i = 0; i < cats.length; i++) {
         var cat = cats[i];
-        var categArray = SetTrip.packingList[cats[i]]
+        var categArray = SetTrip.packingList[cat]
+        console.log(cats[i])
+
         var newItem = $("#item-input").val().trim();
+        var items = SetTrip.packingList[cats[i]];
+        if (cat == selectedCat) {
+            console.log(items)
 
-        if (cats[i] == selectedCat) {
-
-            showInCateg(cats[i], newItem);
-            console.log(cats[i]);
+            if (items.length == 0) {
+                renderCatPanels(cats[i]);
+                console.log(cats[i]);
+            }
             if (newItem) {
+                showInCateg(cats[i], newItem);
+
                 categArray.push(newItem);
                 SetTrip.packingList[cats[i]] = categArray
                 console.log(SetTrip.packingList[cats[i]])

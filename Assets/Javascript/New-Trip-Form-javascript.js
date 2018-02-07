@@ -88,10 +88,13 @@ function addTrip(event) {
             endDate: $("#end-date").val(),
             weather: temp,
             packingList: {
-
-                Clothes: [],
                 Default: [],
+                Medicine: [],
+                Documents:[],
+                Clothes: [],
                 Electronics: [],
+                Shoes:[],
+                Outdoor:[],
                 Toiletries: [],
             }
         }
