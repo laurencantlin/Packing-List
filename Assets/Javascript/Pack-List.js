@@ -4,6 +4,7 @@ function renderPackList() {
     var parsed = [{ packingList: { Default: [] } }];
     if (localStorage.getItem("SetTrip")) {
         parsed = JSON.parse(localStorage.getItem("SetTrip"));
+        console.log(parsed , "comment")
     }
     var SetTrip = parsed
     var cats = Object.keys(SetTrip.packingList);
@@ -49,11 +50,13 @@ function showInCateg(category, newItem) {
 
     itemView = $("." + category);
     if (newItem) {
-        var newItemRow = $("<div class=row>");
+        var itemId = newItem.split(" ").join(",");
+        var newItemRow = $(`<div id=${itemId} class='row' >`);
         newItemRow.text(newItem);
         var checkBox = '<input type="checkbox" aria-label="..."> '
         newItemRow.prepend(checkBox);
         itemView.append(newItemRow);
+        newItemRow.append(`<button class= "removeItem" data-category=${category} data-item=${newItem}>Remove</button>`)
     }
 
 }
@@ -104,3 +107,23 @@ function addItem(event) {
     localStorage.setItem("Trips Array", JSON.stringify(tripArray));
 }
 $("#add-item").click(addItem);
+
+$(document).on("click", ".removeItem", function(){
+    var category =  $(this).attr("data-category");
+    var item = $(this).attr("data-item");
+    var idToRemove = item.split(" ").join(",");
+
+
+    var trip = JSON.parse(localStorage.getItem("SetTrip"));
+    console.log(trip, "this is the thing")
+    var categoryArray = trip.packingList[category]
+
+    var updatedArray = categoryArray.filter(catItem => catItem != item);
+    trip.packingList[category] = updatedArray
+
+    localStorage.setItem("SetTrip", JSON.stringify(trip));
+
+
+    $(`#` + idToRemove).remove();
+
+});
