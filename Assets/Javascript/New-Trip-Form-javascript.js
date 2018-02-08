@@ -112,6 +112,7 @@ function addTrip(event) {
 
 
 $("#create-trip-btn").click(addTrip);
+// $("#weatherInfo").text(SetTrip.weather);
 
 
 
