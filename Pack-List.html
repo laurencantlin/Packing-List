@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Assistant|Pattaya|Racing+Sans+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Assets/CSS/css.css">
+    
 
     <title>Packing List</title>
 </head>
@@ -18,7 +20,17 @@
             <span>Back</span>
         </a>
     </header>
-    <div class="jumbotron"> Next Trip</div>
+    <div class="jumbotron" id="home-jumbo">
+        <div class="col-md-6" id="nextTripLocation">
+            <h2 id="destination"> Trip Destination</h2>
+        </div>
+        <div class="col-md-6" id="nextTripName">
+            <h1 id="trip-name"> Trip Name</h1>
+        </div>
+        <div class="col-md-6" id="nextTripDate">
+            <h4 id="date">Trip start/end date</h4>
+        </div>
+    </div>
 
     <!-- <label for="Search">City</label> -->
     <!-- <input type="text" id="citySearch"><br>
@@ -26,9 +38,10 @@
     <h3 id="weatherInfo"> </h3>
     <h3 id="weatherInfo2"> </h3>
 
-    <div class="jumbotron" id="advisor"> Trip Advisor sugesstions
+    <!-- <div class="jumbotron" id="advisor"> Trip Advisor sugesstions
         <span>(carousel)</span>
-    </div>
+    </div> -->
+
 
 
     <div class="container">
@@ -115,13 +128,18 @@
     <div class="footer navbar-fixed-bottom" id="footer"> &copy A Teeny-Tiny Crabs Production 2018</div>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+      
     <script type="text/javascript" src="assets/Javascript/Pack-List.js"></script>
-    <script src="weather.js"></script>
+   
 
 
 </body>

@@ -17,7 +17,22 @@ function renderPackList() {
             showInCateg(cats[i], items[i2]);
         }
     }
+
+    var formattedStartDate = moment(SetTrip.startDate, "YYYY-MM-DD").format("ll");
+    var formattedEndDate = moment(SetTrip.endDate, "YYYY-MM-DD").format("ll");
+
+    $("#trip-name").text(SetTrip.tripName);
+    $("#destination").text(SetTrip.destination);
+    $("#date").text(formattedStartDate + " - " + formattedEndDate);
+ 
+
+//     var months = ["January", "February", "March", "April", "May", "June", "July"]
+// var start = $("SetTrip.startDate");
+//  var end = $("SetTrip.startDate")
+
 }
+
+
 renderPackList();
 function renderCatPanels(categg) {
     var newPanel = $("<div class='panel panel-default categ-panel'>")

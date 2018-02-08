@@ -41,8 +41,8 @@ header {
    background: #1C4353;
    height: 60px;
 }
-.jumbotron, #advisor {
-    height: 120px;
+.jumbotron, #weather {
+    height: 140px;
 }
 .jumbotron {
     height: 170px;
@@ -220,10 +220,10 @@ p, #added-trip-name {
 
 }
 
- #tripAdvisor {
+ /* #tripAdvisor {
      margin: auto;
      margin-right: 10px;
- }
+ } */
 
  #suggestion {
      border-style: solid;
@@ -239,8 +239,6 @@ p, #added-trip-name {
  .container {
      width: 80%
  }
-
-
 
  #category-form {
      margin: auto;
@@ -319,7 +317,6 @@ p, #added-trip-name {
   border-color: white;
   font-size: 12px;
  }
-
 
  #back-btn {
      background-color: #367f9c;

@@ -62,10 +62,9 @@ var autoFill = function () {
         }
         else { predictionsView.hide() }
     })
-
-
-
 }
+
+
 $("#tripLocation").keyup(autoFill);
 
 // SUBMIT ADD TRIP FORM FUNCTION
@@ -110,7 +109,16 @@ function addTrip(event) {
 
     });
 }
+
+
 $("#create-trip-btn").click(addTrip);
+
+
+
+
+
+
+
 
 
 
