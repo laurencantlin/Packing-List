@@ -13,8 +13,10 @@ var autoFill = function () {
         method: "GET",
     }).done(function (response) {
         predictionsView.empty();
+        console.log(response);
         if (response.status === "ZERO_RESULTS") {
             $("#predictionsView").append("<p> Zero Results </p>");
+        
         }
 
         var renderPredictions = function () {
@@ -88,17 +90,22 @@ function addTrip(event) {
             weather: temp,
             packingList: {
                 Default: [],
-                Toiletries: [],
+                Medicine: [],
+                Documents:[],
                 Clothes: [],
                 Electronics: [],
+                Shoes:[],
+                Outdoor:[],
+                Toiletries: [],
             }
         }
 
         tripsArray.push(trip);
         console.log(tripsArray);
         localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
-        window.location.href = "Pack-List.html";
+        localStorage.setItem("SetTrip", JSON.stringify(trip));
 
+        window.location.href = "Pack-List.html";
 
     });
 }

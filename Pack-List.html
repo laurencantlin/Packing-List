@@ -9,6 +9,7 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Assistant|Pattaya|Racing+Sans+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Assets/CSS/css.css">
+    
 
     <title>Packing List</title>
 </head>
@@ -21,24 +22,21 @@
     </header>
     <div class="jumbotron" id="home-jumbo">
         <div class="col-md-6" id="nextTripLocation">
-            <h2> Trip Destination</h2>
+            <h2 id="destination"> Trip Destination</h2>
         </div>
         <div class="col-md-6" id="nextTripName">
             <h1 id="trip-name"> Trip Name</h1>
         </div>
         <div class="col-md-6" id="nextTripDate">
-            <h4>Trip start/end date</h4>
+            <h4 id="date">Trip start/end date</h4>
         </div>
     </div>
 
-    <div class="jumbotron" id="weather"> Weather
-        <div class="row">
-
-    <label for="Search">City</label> 
-   <input type="text" id="citySearch"><br>
-    <input id="weatherSearch" type="submit" value="Weather Search"><br>
-    <h3 id = "weatherInfo"> </h3>
-    <h3 id = "weatherInfo2"> </h3>
+    <!-- <label for="Search">City</label> -->
+    <!-- <input type="text" id="citySearch"><br>
+    <input id="weatherSearch" type="submit" value="Weather Search"><br> -->
+    <h3 id="weatherInfo"> </h3>
+    <h3 id="weatherInfo2"> </h3>
 
     <!-- <div class="jumbotron" id="advisor"> Trip Advisor sugesstions
         <span>(carousel)</span>
@@ -81,7 +79,7 @@
                             <a href="#" class="set-category-btn">Medicine</a>
                         </li>
                         <li>
-                            <a href="#" class="set-category-btn">Travel Documents</a>
+                                 <a href="#" class="set-category-btn"> Documents</a>
                         </li>
                         <li>
                             <a href="#" class="set-category-btn">Shoes</a>
@@ -102,57 +100,20 @@
 
         <div class="row" id="panels-view">
             <br>
-            <div class="panel panel-default categ-panel">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Clothes</h3>
-                </div>
-                <div class="panel-body">
-                    <!-- /.col-lg-6 -->
-                    <div class="col-lg-12 categ-view Clothes" id="item-view-Clothes">
-                        <div class="row">
-                            <!-- <input type="checkbox" aria-label="...">
-                            <span class="item">hi</span> -->
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Toiletries</h3>
-                </div>
-                <div class="panel-body">
-
-                    <!-- /.col-lg-6 -->
-                    <div class="col-lg-12 categ-view Toiletries" id="item-view-Toiletries">
-                        <div class="row">
-                            <!-- <input type="checkbox" aria-label="...">
-                            <span class="item">hi</span> -->
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="panel panel-default categ-panel empty hide">
+            <div class="panel panel-default categ-panel  hide" id="panelHTML">
                 <div class="panel-heading">
                     <h3 class="panel-title"></h3>
                 </div>
                 <div class="panel-body">
-
-                    <!-- /.col-lg-6 -->
-                    <div class="col-lg-12 categ-view empty" id="item-view-">
+                    <div class="col-lg-12 categ-view" id="item-view-">
                         <div class="row">
-                            <input type="checkbox" aria-label="...">
-                            <span class="item"></span>
+                          
                         </div>
-
                     </div>
                 </div>
 
             </div>
+
         </div>
 
 
@@ -166,6 +127,8 @@
 
     <div class="footer navbar-fixed-bottom" id="footer"> &copy A Teeny-Tiny Crabs Production 2018</div>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.js"></script>
 
@@ -174,7 +137,7 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-        <script type="text/javascript" src="Assets/javascript/convert-temp.js"></script>
+      
     <script type="text/javascript" src="assets/Javascript/Pack-List.js"></script>
    
 
