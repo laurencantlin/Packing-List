@@ -24,12 +24,9 @@ function renderPackList() {
     $("#trip-name").text(SetTrip.tripName);
     $("#destination").text(SetTrip.destination);
     $("#date").text(formattedStartDate + " - " + formattedEndDate);
+
+    $("#weatherInfo").text( "It is currently " + SetTrip.weather +  "\xB0 F"+ " in " + SetTrip.destination + " currently.");
  
-
-//     var months = ["January", "February", "March", "April", "May", "June", "July"]
-// var start = $("SetTrip.startDate");
-//  var end = $("SetTrip.startDate")
-
 }
 
 
