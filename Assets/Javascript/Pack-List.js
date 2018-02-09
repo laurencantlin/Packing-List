@@ -87,11 +87,12 @@ function addItem(event) {
         if (cat == selectedCat) {
             console.log(items)
 
+            if (newItem) {
+
             if (items.length == 0) {
                 renderCatPanels(cats[i]);
                 console.log(cats[i]);
             }
-            if (newItem) {
                 showInCateg(cats[i], newItem);
 
                 categArray.push(newItem);
