@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Assistant|Pattaya|Racing+Sans+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Assistant|Pattaya|Racing+Sans+One|Unica+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Assets/CSS/css.css">
     
 
@@ -16,18 +16,20 @@
 
 <body>
     <header>
-        <a href="Trip-List.html" button class="add-item-btn" role="button">
-            <span>Back</span>
+        <a href="Trip-List.html"> <button class="add-item-btn" role="button">
+            <span>Back</span></button>
         </a>
     </header>
     <div class="jumbotron" id="home-jumbo">
-        <div class="col-md-6" id="nextTripLocation">
-            <h2 id="destination"> Trip Destination</h2>
-        </div>
-        <div class="col-md-6" id="nextTripName">
+        <div class="col-xs-12" id="nextTripName">
             <h1 id="trip-name"> Trip Name</h1>
         </div>
-        <div class="col-md-6" id="nextTripDate">
+        
+        <div class="col-xs-12" id="nextTripLocation">
+            <h2 id="destination"> Trip Destination</h2>
+        </div>
+        
+        <div class="col-xs-12" id="nextTripDate">
             <h4 id="date">Trip start/end date</h4>
         </div>
     </div>
@@ -37,9 +39,8 @@
     <input id="weatherSearch" type="submit" value="Weather Search"><br> -->
    
 
-    <div class="jumbotron" id="advisor"> 
+    <div class="jumbotron" id="weather"> 
         <h3 id="weatherInfo"> </h3>
-    <h3 id="weatherInfo2"> </h3>
     </div>
 
 
@@ -101,7 +102,7 @@
         <div class="row" id="panels-view">
             <br>
             <div class="panel panel-default categ-panel  hide" id="panelHTML">
-                <div class="panel-heading">
+                <div id="panel-heading">
                     <h3 class="panel-title"></h3>
                 </div>
                 <div class="panel-body">
@@ -132,14 +133,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.js"></script>
 
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
       
-    <script type="text/javascript" src="assets/Javascript/Pack-List.js"></script>
-    <script type="text/javascript" src="assets/Javascript/particles.js"></script>
+    <script type="text/javascript" src="Assets/Javascript/Pack-List.js"></script>
+    <script type="text/javascript" src="Assets/Javascript/particles.js"></script>
    
 
 

@@ -42,22 +42,18 @@ header {
    height: 60px;
 }
 .jumbotron, #weather {
-    height: 140px;
+    height: 100px;
+    background-color: rgb(196, 185, 93);
 }
 .jumbotron {
     height: 170px;
 }
 
  #home-jumbo {
-    background-image: url("../Images/vaca1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;  
-}
-#user-jumbo {
-    background-image: url("../Images/vaca2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;  
-
+   
+    height: 200px;
+  background-color: #779E7E;
+   
 }
 
 #cancel-btn {
@@ -71,23 +67,40 @@ header {
     margin-right: 30px;
 }
 
- /* #trip-list {
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-    margin-top: 30px;
-} */
-/* 
-.tripcol {
-    padding: 20px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black; */
+.add-item-btn {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    border: solid, 3px, white;
+    float: right;
+    background-color: #3E90C0;
+    margin-top: 10px;
+    margin-right: 30px;
+    border-radius: 5px;
+}
+
+#add-item {
+    background-color: #779E7E;
+    border-color: white;
+
+}
+
+
+#weatherInfo {
+   margin-top: -1%;
+   color: white;
+   font-family: "Assistant";
+   text-align: center;
+  
+
+}
 
 #create-btn {
     background-color:#779E7E;
     border-color: white;
     color: white;
+    margin-top: -50px;
+    float: right;
 }
 
 #add-item-btn {
@@ -157,7 +170,6 @@ header {
     color: white;
     border-color: white;
     width: 100px;
-
 }
 
 #next-btn {
@@ -173,27 +185,28 @@ border-color: white;
 
 }
 
-.trip-list-header {
+ .trip-list-header {
     font-family: "Racing Sans One";
-    color: white;
-    font-size: 30px;
+    color: #1C4353;
+    font-size: 16px;
     margin-bottom: -10px;
-    background-color: #1C4353;
-    border-radius: 5px;
-    height: 35px;
-    padding-left: 10px;
+    background-color: white;
+    border-radius: 3px;
+    height: 20px;
+    padding-left: 25px;
+    text-transform: initial;
 }
 
-#trip-list{
-    border-color: #1C4353;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 5px;
-}
 
 #added-trip-list {
     padding-top: 20px;
     padding-bottom: 10px;
+    margin-top: 6px;
+    border-width: 2px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: white;
+
 }
 
 #predictionsView {
@@ -201,36 +214,20 @@ border-color: white;
     background-color: white;
 }
 
-p {
-    border-bottom: 1px;
-    border-top: 0px;
-    border-right: 0px;
-    border-left: 0px;
-    border-color: #1C4353;
-    border-style: solid;   
+ .added-trip-name {
+   
+  color: white;
+  font-family: "Unica One";
+  font-size: 24px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+background-color: #1C4353;
+padding-left: 5px;
 }
 
-p, #added-trip-name {
-    border-bottom: 1px;
-    border-top: 0px;
-    border-right: 0px;
-    border-left: 0px;
-    border-color: #1C4353;
-    border-style: solid;
 
-}
-
- /* #tripAdvisor {
-     margin: auto;
-     margin-right: 10px;
- } */
-
- #suggestion {
-     border-style: solid;
-     border-width: 2px;
-     border-color: black;
-     padding: 10px; 
- }
 
  #create-list-btn {
     margin-top: 150px;
@@ -332,13 +329,14 @@ p, #added-trip-name {
  #nextTripName {
     font-family: "Racing Sans One";
     color: white;
-    font-size: 20%;
+    font-size: 10px;
     text-align: center;
-    margin-top: -30px;    
+    margin-top: -5%; 
+    margin-bottom: 15px;   
  }
  
  #nextTripLocation {
-    margin-top: -5%;
+    margin-top: -40px;
     color: white;
     font-family: "Racing Sans One";
     text-align: center;
@@ -349,9 +347,61 @@ p, #added-trip-name {
  }
 
  #nextTripDate {
-    font-family: "Assistant";
+    font-family: "Unica One";
     font-size: 20px;
     text-align: center;
-    color: white; 
-    margin-top: -15px;  
+    color: #1C4353; 
+    margin-top: -10px;
+}
+
+#date {
+margin-top: 7px;
+background-color: white;
+}
+
+ .panel-title {
+font-family: "Racing Sans One";
+color: white;
+font-size: 16px;
+margin-bottom: -10px;
+background-color: #1C4353;
+border-radius: 3px;
+height: 20px;
+padding-left: 10px;
+text-transform: initial;
+
+}
+
+#panel-heading {
+    background-color: #1C4353;
+    border-radius: 3px;
+}
+
+ .removeItem {
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    border: solid, 3px, white;
+    float: right;
+    background-color: rgb(165, 33, 33);
+    margin-right: 30px;
+    border-radius: 5PX;
+}
+
+.removeTrip {
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    border: solid, 3px, white;
+    float: right;
+    background-color: rgb(165, 33, 33);
+    margin-right: 20px;
+    margin-top: -40px;
+    border-radius: 5PX;
+}
+
+#list-img{
+width:20px;
+margin-bottom: -75px;
+margin-left: 5px;
 }
