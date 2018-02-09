@@ -4,7 +4,7 @@ function renderPackList() {
     var parsed = [{ packingList: { Default: [] } }];
     if (localStorage.getItem("SetTrip")) {
         parsed = JSON.parse(localStorage.getItem("SetTrip"));
-        console.log(parsed , "comment")
+        console.log(parsed, "comment")
     }
     var SetTrip = parsed
     var cats = Object.keys(SetTrip.packingList);
@@ -26,8 +26,8 @@ function renderPackList() {
     $("#destination").text(SetTrip.destination);
     $("#date").text(formattedStartDate + " - " + formattedEndDate);
 
-    $("#weatherInfo").text( "It is currently " + SetTrip.weather +  "\xB0 F"+ " in " + SetTrip.destination + ".");
- 
+    $("#weatherInfo").text("It is currently " + SetTrip.weather + "\xB0 F" + " in " + SetTrip.destination + ".");
+
 }
 
 
@@ -83,46 +83,35 @@ function addItem(event) {
     for (var i = 0; i < cats.length; i++) {
         var cat = cats[i];
         var categArray = SetTrip.packingList[cat]
-        console.log(cats[i])
-
         var newItem = $("#item-input").val().trim();
         var items = SetTrip.packingList[cats[i]];
         if (cat == selectedCat) {
-            console.log(items)
-
             if (newItem) {
-
-            if (items.length == 0) {
-                renderCatPanels(cats[i]);
-                console.log(cats[i]);
-            }
+                if (items.length == 0) {
+                    renderCatPanels(cats[i]);
+                }
                 showInCateg(cats[i], newItem);
-
                 categArray.push(newItem);
                 SetTrip.packingList[cats[i]] = categArray
-                console.log(SetTrip.packingList[cats[i]])
             }
         }
     }
-
-    console.log(SetTrip.packingList);
-
-    // SetTrip[i].packingList.Default.push(item);
-    localStorage.setItem("SetTrip", JSON.stringify(SetTrip));
-
+    localStorage.setItem("SetTrip", JSON.stringify(SetTrip))
     var tripArray = JSON.parse(localStorage.getItem("Trips Array"));
-
     for (var i = 0; i < tripArray.length; i++) {
         if (tripArray[i].tripName === SetTrip.tripName) {
             tripArray[i] = SetTrip
         }
     }
     localStorage.setItem("Trips Array", JSON.stringify(tripArray));
+    $("#item-input").val("");
+
+
 }
 $("#add-item").click(addItem);
 
-$(document).on("click", ".removeItem", function(){
-    var category =  $(this).attr("data-category");
+$(document).on("click", ".removeItem", function () {
+    var category = $(this).attr("data-category");
     var item = $(this).attr("data-item");
     var idToRemove = item.split(" ").join(",");
 
