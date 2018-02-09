@@ -112,20 +112,58 @@ $("#add-item").click(addItem);
 
 $(document).on("click", ".removeItem", function () {
     var category = $(this).attr("data-category");
+    console.log(this);
+    console.log(category)
     var item = $(this).attr("data-item");
     var idToRemove = item.split(" ").join(",");
-
-
+    console.log(item);
     var trip = JSON.parse(localStorage.getItem("SetTrip"));
     console.log(trip, "this is the thing")
     var categoryArray = trip.packingList[category]
-
     var updatedArray = categoryArray.filter(catItem => catItem != item);
     trip.packingList[category] = updatedArray
-
+    if (categoryArray = []) {
+        console.log("hi i'm empty", category)
+    }
     localStorage.setItem("SetTrip", JSON.stringify(trip));
-
-
     $(`#` + idToRemove).remove();
 
 });
+
+
+function clickCustom() {
+    console.log("add custom");
+}
+$(".custom-categ-btn").click(clickCustom);
+
+function addCateg() {
+
+
+    event.preventDefault();
+    newCateg = $("#custom-categ-input").val();
+    if (newCateg != "") {
+        console.log(newCateg);
+        var SetTrip = JSON.parse(localStorage.getItem("SetTrip"));
+        SetTrip.packingList[newCateg] = [];
+        console.log(SetTrip)
+        newListItem = "<li>"
+        newLink = "<a href='#'>"
+        newLink = $(newLink).text(newCateg);
+        linkClass = "set-category-btn"
+        newLink = $(newLink).addClass(linkClass);
+        newListItem = $(newListItem).append(newLink);
+        console.log(newListItem)
+        $(".dropdown-menu").prepend(newListItem);
+        $("#myModal").modal("hide");    
+
+    }
+
+
+}
+$("#add-categ-btn").click(addCateg);
+
+
+// function closeCustomCat() {
+//     $("#myModal").modal("hide");
+// }
+// $("#add-categ-btn").click(closeCustomCat);
