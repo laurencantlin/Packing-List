@@ -18,14 +18,20 @@ var autoFill = function () {
             $("#predictionsView").append("<p> Zero Results </p>");
         
         }
-
+        
         var renderPredictions = function () {
+            var predictionArr = [];
+
             for (var i = 0; i < response.predictions.length; i++) {
                 var newPredict = $("<p>")
                 var predictions = [];
-                predictions[i] = response.predictions[i].description;
-                console.log(predictions[i]);
-                newPredict.text(predictions[i]);
+                predictions = response.predictions[i].description;
+                console.log(predictions);
+                var city=predictions.split(",");
+                var city=city.slice(-3, city.length);
+                city =city.join(",")
+                console.log(city);
+                newPredict.text(city);
                 newPredict.addClass("prediction");
                 predictionsView.append(newPredict);
             }
