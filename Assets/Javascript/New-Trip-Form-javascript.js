@@ -78,7 +78,7 @@ function addTrip(event) {
 
     $.ajax({
         type: "GET",
-        url: 'https://cors-anywhere.herokuapp.com/' + "http://api.openweathermap.org/data/2.5/weather?q=" + $("#tripLocation").val() + "&appid=8a03f969205ca8695bf44e2bd8b84126",
+        url: 'https://cors-anywhere.herokuapp.com/' + "https://api.openweathermap.org/data/2.5/weather?q=" + $("#tripLocation").val() + "&appid=8a03f969205ca8695bf44e2bd8b84126",
     }).done(function (result) {
         console.log(result);
         var temp = Math.floor(result.main.temp * 9 / 5 - 459.67);
