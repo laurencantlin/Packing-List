@@ -18,6 +18,15 @@ function renderPackList() {
             showInCateg(cats[i], items[i2]);
         }
     }
+    for (var cat in SetTrip.packingList){
+        newListItem = "<li>"
+        newLink = "<a href='#'>"
+        newLink = $(newLink).text(cat);
+        linkClass = "set-category-btn"
+        newLink = $(newLink).addClass(linkClass);
+        newListItem = $(newListItem).append(newLink);
+        $(newListItem).insertBefore("li.divider");
+    }
 
     var formattedStartDate = moment(SetTrip.startDate, "YYYY-MM-DD").format("ll");
     var formattedEndDate = moment(SetTrip.endDate, "YYYY-MM-DD").format("ll");
@@ -25,7 +34,6 @@ function renderPackList() {
     $("#trip-name").text(SetTrip.tripName);
     $("#destination").text(SetTrip.destination);
     $("#date").text(formattedStartDate + " - " + formattedEndDate);
-
     $("#weatherInfo").text("It is currently " + SetTrip.weather + "\xB0 F" + " in " + SetTrip.destination + ".");
 
 }
@@ -51,6 +59,7 @@ function renderCatPanels(categg) {
 function setCateg() {
     var selectedCatBtn = $("#categ-dropdown-btn");
     var setCategTo = $(this).text() + " ";
+    console.log(this);
     selectedCatBtn.text(setCategTo);
     var spanCaret = $("<span> ").addClass("caret");
     selectedCatBtn.append(spanCaret);
@@ -131,10 +140,11 @@ $(document).on("click", ".removeItem", function () {
 });
 
 
-function clickCustom() {
-    console.log("add custom");
-}
-$(".custom-categ-btn").click(clickCustom);
+// function clickCustom(event) {
+//     event.preventDefault();
+//     console.log("add custom");
+// }
+// $(".custom-categ-btn").click(clickCustom);
 
 function addCateg() {
 
@@ -153,15 +163,36 @@ function addCateg() {
         newLink = $(newLink).addClass(linkClass);
         newListItem = $(newListItem).append(newLink);
         console.log(newListItem)
-        $(".dropdown-menu").prepend(newListItem);
-        $("#myModal").modal("hide");    
+        $(newListItem).insertBefore("li.divider");
 
+        $("#myModal").modal("hide");    
+        var selectedCatBtn = $("#categ-dropdown-btn");
+        selectedCatBtn.text(newCateg+ " ");
+        var spanCaret = $("<span> ").addClass("caret");
+        selectedCatBtn.append(spanCaret)
+
+        localStorage.setItem("SetTrip", JSON.stringify(SetTrip));
+        var tripArray = JSON.parse(localStorage.getItem("Trips Array"));
+        for(var i = 0; i <tripArray.length; i++){
+            if (tripArray[i].tripName === SetTrip.tripName){
+                tripArray[i] =SetTrip;
+            }
+        }
+        localStorage.setItem("Trips Array", JSON.stringify(tripArray));
     }
 
 
 }
 $("#add-categ-btn").click(addCateg);
+$(".set-category-btn").click(setCateg);
 
+function renderDropList(Categ){
+    var SetTrip = JSON.parse(localStorage.getItem("SetTrip"));
+    for (var i = 0; i < SetTrip.packingList.length; i++){
+        console.log(SetTrip.packingList[i])
+    }
+
+}
 
 // function closeCustomCat() {
 //     $("#myModal").modal("hide");
