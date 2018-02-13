@@ -40,6 +40,7 @@ var autoFill = function () {
                 console.log("clickssss");
                 locInput.val(this.innerText);
                 predictionsView.hide();
+                $("#tripName").val(this.innerText)
             }
             $(".prediction").hover(hoverOn, hoverOff);
             function hoverOn() {
@@ -65,6 +66,7 @@ var autoFill = function () {
         if (locInput.val() !== "") {
             predictionsView.show();
             renderPredictions();
+
         }
         else { predictionsView.hide() }
     })
@@ -72,6 +74,9 @@ var autoFill = function () {
 
 
 $("#tripLocation").keyup(autoFill);
+
+
+
 
 // SUBMIT ADD TRIP FORM FUNCTION
 function addTrip(event) {
