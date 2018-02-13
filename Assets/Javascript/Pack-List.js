@@ -35,7 +35,6 @@ function renderPackList() {
     $("#destination").text(SetTrip.destination);
     $("#date").text(formattedStartDate + " - " + formattedEndDate);
     $("#weatherInfo").text("It is currently " + SetTrip.weather + "\xB0 F" + " in " + SetTrip.destination + ".");
-
 }
 
 
