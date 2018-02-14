@@ -18,14 +18,20 @@ var autoFill = function () {
             $("#predictionsView").append("<p> Zero Results </p>");
         
         }
-
+        
         var renderPredictions = function () {
+            var predictionArr = [];
+
             for (var i = 0; i < response.predictions.length; i++) {
                 var newPredict = $("<p>")
                 var predictions = [];
-                predictions[i] = response.predictions[i].description;
-                console.log(predictions[i]);
-                newPredict.text(predictions[i]);
+                predictions = response.predictions[i].description;
+                console.log(predictions);
+                var city=predictions.split(",");
+                var city=city.slice(-3, city.length);
+                city =city.join(",")
+                console.log(city);
+                newPredict.text(city);
                 newPredict.addClass("prediction");
                 predictionsView.append(newPredict);
             }
@@ -34,6 +40,7 @@ var autoFill = function () {
                 console.log("clickssss");
                 locInput.val(this.innerText);
                 predictionsView.hide();
+                $("#tripName").val(this.innerText)
             }
             $(".prediction").hover(hoverOn, hoverOff);
             function hoverOn() {
@@ -59,6 +66,7 @@ var autoFill = function () {
         if (locInput.val() !== "") {
             predictionsView.show();
             renderPredictions();
+
         }
         else { predictionsView.hide() }
     })
@@ -66,6 +74,9 @@ var autoFill = function () {
 
 
 $("#tripLocation").keyup(autoFill);
+
+
+
 
 // SUBMIT ADD TRIP FORM FUNCTION
 function addTrip(event) {

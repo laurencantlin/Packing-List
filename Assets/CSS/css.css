@@ -1,13 +1,13 @@
 html{
-    height: 100%;
+    min-height: 100%;
 }
 
 .wrapper {
 background: linear-gradient(to top right,#779E7E,#3E90C0);
 background-repeat: no-repeat;
 background-size: cover;
-margin-bottom: 0;
-height: 100vh;
+/* margin-bottom: 0; */
+/* height: 100vh; */
 width: 100%
     
 }
@@ -17,9 +17,12 @@ background: linear-gradient(to top right,#779E7E,#3E90C0);
 background-repeat: no-repeat;
 background-size: cover;
 position: relative;
-margin-bottom: 0;
-min-height: 100%;
-padding-bottom: 100px;
+/* bottom: 0px; */
+/* margin-bottom: 40px; */
+height: 100%; 
+min-height: 100vh;
+
+padding-bottom: 40px;
 width: 100%
 
 }
@@ -49,7 +52,8 @@ header {
 }
 .jumbotron, #weather {
     height: 100px;
-    background-color: rgb(196, 185, 93);
+    background-color:transparent;
+    /* opacity: 0.5; */
 }
 .jumbotron {
     height: 170px;
@@ -58,8 +62,21 @@ header {
  #home-jumbo {
    
     height: 200px;
-  background-color: #779E7E;
-   
+    background-color:transparent;
+
+  /* background-color: #779E7E;
+    */
+}
+
+#footer {
+    background-color: #1C4353;
+    position: absolute;
+    height: 40px;
+    color: white;
+    bottom: 0px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 10px;
 }
 
 #cancel-btn {
@@ -129,15 +146,6 @@ header {
 }
 
 
-#footer {
-    background-color: #1C4353;
-    position: absolute;
-    height: 40px;
-    color: white;
-    text-align: center;
-    padding-top: 10px;
-    font-size: 10px;
-}
 
 
 /* Add trip form */
@@ -337,7 +345,7 @@ padding-left: 5px;
     color: white;
     font-size: 10px;
     text-align: center;
-    margin-top: -5%; 
+    /* margin-top: -5%;  */
     margin-bottom: 15px;   
  }
  
@@ -362,18 +370,20 @@ padding-left: 5px;
 
 #date {
 margin-top: 7px;
-background-color: white;
+/* background-color: white; */
 }
 
+
+
  .panel-title {
-font-family: "Racing Sans One";
+font-family: "Assistant";
 color: white;
 font-size: 16px;
-margin-bottom: -10px;
+/* margin-bottom: -10px; */
 background-color: #1C4353;
 border-radius: 3px;
-height: 20px;
-padding-left: 10px;
+/* height: 20px; */
+padding: 10px 10px;
 text-transform: initial;
 
 }
@@ -382,17 +392,10 @@ text-transform: initial;
     background-color: #1C4353;
     border-radius: 3px;
 }
+ .panel-body{
+     padding:15px 0;
+ }
 
- .removeItem {
-    color: white;
-    text-align: center;
-    font-size: 10px;
-    border: solid, 3px, white;
-    float: right;
-    background-color: rgb(165, 33, 33);
-    margin-right: 30px;
-    border-radius: 5PX;
-}
 
 .removeTrip {
     color: white;
@@ -401,10 +404,72 @@ text-transform: initial;
     border: solid, 3px, white;
     float: right;
     background-color: rgb(165, 33, 33);
-    margin-right: 20px;
+    margin-right: 30px;
     margin-top: -40px;
     border-radius: 5PX;
 }
+
+
+.item-row{
+    /* /* border: solid, 2px, grey; */
+  /* background: burlywood; */
+    /* opacity: 0.2;  */
+    padding: 2px;
+    /* position: relative; */
+    /* border-top-color: teal;
+    border-top-width: 2px;
+    border-top-style: solid; */
+    /* border-bottom-color: teal; */
+    border-bottom-width: 2px;
+    border-bottom-style: inset;
+}
+
+ .removeItem {
+    /* position: absolute; */
+    margin: 0 auto;
+
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    background-color:transparent;
+    margin-right: 0 5px;
+    /* border-radius: 5PX; */
+   max-height: 100%;
+   padding: 2px;
+   border: 0;
+
+}
+
+.glyphicon-trash{
+    color: darkslategray;
+    height: 100%;
+    /* border:  solid, 1px, blue; */
+    margin: 0 auto;
+
+
+}
+
+
+.big-checkbox {width: 54px; height: 30px;}
+
+input.item-checkbx {
+    margin: 0 auto;
+    height: 30px ;
+    width: 30px;
+border-radius: 5px;
+border: 2px solid;
+}
+
+
+.item-row-input{
+    background: transparent;
+    border: 0;
+    /* background: lightblue; */
+    padding: 2.5px;
+    margin: 0 auto;
+
+}
+
 
 #list-img{
 width:20px;
@@ -415,3 +480,4 @@ margin-left: 5px;
 #panels-view{
     
 }
+

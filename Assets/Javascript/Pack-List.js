@@ -71,12 +71,19 @@ function showInCateg(category, newItem) {
     itemView = $("." + category);
     if (newItem) {
         var itemId = newItem.split(" ").join(",");
-        var newItemRow = $(`<div id=${itemId} class='row' >`);
-        newItemRow.text(newItem);
-        var checkBox = '<input type="checkbox" aria-label="..."> '
-        newItemRow.prepend(checkBox);
+        var newItemRow = $(`<div id=${itemId} class='row item-row' >`);
+        var inputRow = $("<input class='col-xs-10 row-eq-height item-row-input'>");
+        // var trashIcon = $(`<span class='glyphicon glyphicon-trash removeItem col-xs-1' data-category=${category} data-item=${newItem} ></span>`);
+        inputRow.val(newItem);
+        var checkBox = '<input type="checkbox" class="item-checkbx col-xs-1 row-eq-height" aria-label="..."> '
+        // newItemRow.append(trashIcon);
+
+        newItemRow.append(`<button class= "col-xs-1 row-eq-height removeItem" data-category=${category} data-item=${newItem}>`);
+        newItemRow.children("button").append("<span class='glyphicon glyphicon-trash'> ");  
+        newItemRow.append(checkBox);
+        newItemRow.append(inputRow)
+
         itemView.append(newItemRow);
-        newItemRow.append(`<button class= "removeItem" data-category=${category} data-item=${newItem}>Remove</button>`)
     }
 
 }
@@ -91,7 +98,7 @@ function addItem(event) {
     for (var i = 0; i < cats.length; i++) {
         var cat = cats[i];
         var categArray = SetTrip.packingList[cat]
-        var newItem = $("#item-input").val().trim();
+        // var newItem = $("#item-input").val().trim();
         var items = SetTrip.packingList[cats[i]];
         if (cat == selectedCat) {
             if (newItem) {
