@@ -16,9 +16,9 @@ var autoFill = function () {
         console.log(response);
         if (response.status === "ZERO_RESULTS") {
             $("#predictionsView").append("<p> Zero Results </p>");
-        
+
         }
-        
+
         var renderPredictions = function () {
             var predictionArr = [];
 
@@ -27,9 +27,9 @@ var autoFill = function () {
                 var predictions = [];
                 predictions = response.predictions[i].description;
                 console.log(predictions);
-                var city=predictions.split(",");
-                var city=city.slice(-3, city.length);
-                city =city.join(",")
+                var city = predictions.split(",");
+                var city = city.slice(-3, city.length);
+                city = city.join(",")
                 console.log(city);
                 newPredict.text(city);
                 newPredict.addClass("prediction");
@@ -86,6 +86,9 @@ function addTrip(event) {
         tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
 
     }
+    var locationSpace = $("#tripLocation").val().split(" ");
+    locationSpace = locationSpace.join("-");
+
 
     $.ajax({
         type: "GET",
@@ -111,14 +114,24 @@ function addTrip(event) {
             }
         }
 
-        tripsArray.push(trip);
-        console.log(tripsArray);
-        localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
-        localStorage.setItem("SetTrip", JSON.stringify(trip));
 
-        window.location.href = "Pack-List.html";
 
+
+    $.ajax({
+        type: "GET",
+        url: 'https://api.teleport.org/api/urban_areas/slug:' + locationSpace + '/images/',
+    }).done(function (result) {
+        console.log(result);
     });
+
+    tripsArray.push(trip);
+    console.log(tripsArray);
+    localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
+    localStorage.setItem("SetTrip", JSON.stringify(trip));
+
+    window.location.href = "Pack-List.html";
+
+});
 }
 
 
