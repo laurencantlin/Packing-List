@@ -53,6 +53,8 @@ function renderCatPanels(categg) {
     $("." + panelClass + " >div.panel-body >").addClass(categg);
 
 }
+
+
 // -----------------------------------
 // SET CATEGORY DROPDOWN
 function setCateg() {
@@ -70,7 +72,7 @@ function showInCateg(category, newItem) {
 
     itemView = $("." + category);
     if (newItem) {
-        var itemId = newItem.split(" ").join(",");
+        var itemId = newItem.split(" ").join("-");
         var newItemRow = $(`<div id=${itemId} class='row item-row' >`);
         var inputRow = $("<input class='col-xs-10 row-eq-height item-row-input'>");
         // var trashIcon = $(`<span class='glyphicon glyphicon-trash removeItem col-xs-1' data-category=${category} data-item=${newItem} ></span>`);
@@ -78,7 +80,7 @@ function showInCateg(category, newItem) {
         var checkBox = '<input type="checkbox" class="item-checkbx col-xs-1 row-eq-height" aria-label="..."> '
         // newItemRow.append(trashIcon);
 
-        newItemRow.append(`<button class= "col-xs-1 row-eq-height removeItem" data-category=${category} data-item=${newItem}>`);
+        newItemRow.append(`<button class= "col-xs-1 row-eq-height removeItem" data-category=${category} data-item=${itemId}>`);
         newItemRow.children("button").append("<span class='glyphicon glyphicon-trash'> ");  
         newItemRow.append(checkBox);
         newItemRow.append(inputRow)
@@ -128,20 +130,28 @@ $("#add-item").click(addItem);
 $(document).on("click", ".removeItem", function () {
     var category = $(this).attr("data-category");
     console.log(this);
-    console.log(category)
+    console.log(category);
     var item = $(this).attr("data-item");
-    var idToRemove = item.split(" ").join(",");
+    var itemToRemove = item.split("-").join(" ");
     console.log(item);
     var trip = JSON.parse(localStorage.getItem("SetTrip"));
-    console.log(trip, "this is the thing")
-    var categoryArray = trip.packingList[category]
-    var updatedArray = categoryArray.filter(catItem => catItem != item);
-    trip.packingList[category] = updatedArray
-    if (categoryArray = []) {
-        console.log("hi i'm empty", category)
-    }
+    console.log(trip, "this is the thing");
+    var categoryArray = trip.packingList[category];
+    var updatedArray = categoryArray.filter(catItem => catItem != itemToRemove);
+    trip.packingList[category] = updatedArray;   
     localStorage.setItem("SetTrip", JSON.stringify(trip));
-    $(`#` + idToRemove).remove();
+    $(`#` + item).remove();
+    var tripArray = JSON.parse(localStorage.getItem("Trips Array"));
+    for (var i = 0; i < tripArray.length; i++) {
+        if (tripArray[i].tripName === trip.tripName) {
+            tripArray[i] = trip
+        }
+    }
+    localStorage.setItem("Trips Array", JSON.stringify(tripArray));
+    $("#item-input").val("");
+    if (updatedArray.length === 0) {
+        hideCatPanel(category);
+    }
 
 });
 
@@ -200,7 +210,7 @@ function renderDropList(Categ){
 
 }
 
-// function closeCustomCat() {
-//     $("#myModal").modal("hide");
-// }
-// $("#add-categ-btn").click(closeCustomCat);
+function hideCatPanel(categg){
+    console.log(categg)
+    $(".categ-" + categg).hide();
+}
