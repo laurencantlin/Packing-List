@@ -50,14 +50,14 @@ function renderPackList() {
     }).done(function (result) {
         var pic = result.photos[0].image.web;
      
-      $("#jumbo").attr("style","background-image: url("+pic+"); background-size: 100%;");
-       
-
+      $("#jumbo").attr("style","background-image: url("+pic+"); background-size: cover;");
         console.log(result);
         console.log(pic);
     });
-
 }
+
+//adds weather animation
+
 
 
 renderPackList();
@@ -226,3 +226,11 @@ function renderDropList(Categ){
 //     $("#myModal").modal("hide");
 // }
 // $("#add-categ-btn").click(closeCustomCat);
+
+
+
+
+
+
+
+

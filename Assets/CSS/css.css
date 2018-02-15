@@ -23,7 +23,7 @@ height: 100%;
 /* min-height: 100vh;
 
 padding-bottom: 40px; */
-width: 100%
+
 
 }
 
@@ -51,6 +51,7 @@ header {
    height: 60px;
    position: fixed;
    width: 100%;
+   z-index: 1;
 }
  #home-jumbo {
     height: 300px;
@@ -65,6 +66,7 @@ header {
 
  #weather {
     height: 100px;
+    background: linear-gradient(to top left,rgb(218, 215, 42),rgb(192, 82, 62));
     /* opacity: 0.5; */
 }
 
@@ -113,6 +115,7 @@ header {
     border-color: white;
     border-radius: 3px;
     height: 30px;
+    margin: 30px 30px 0px 0px;
     
 
 }
@@ -153,8 +156,6 @@ header {
     width: 110px;
     padding-left: 20px;
 }
-
-
 
 
 /* Add trip form */
@@ -454,10 +455,7 @@ text-transform: initial;
     height: 100%;
     /* border:  solid, 1px, blue; */
     margin: 0 auto;
-
-
 }
-
 
 .big-checkbox {width: 54px; height: 30px;}
 
@@ -469,16 +467,13 @@ border-radius: 5px;
 border: 2px solid;
 }
 
-
 .item-row-input{
     background: transparent;
     border: 0;
     /* background: lightblue; */
     padding: 2.5px;
     margin: 0 auto;
-
 }
-
 
 #list-img{
 width:20px;
@@ -486,36 +481,60 @@ margin-bottom: -75px;
 margin-left: 5px;
 }
 
-#panels-view{
+/* #panels-view{
     
-}
+} */
 
 #edit {
-    background-color: rgb(70, 88, 95);
+    background-color: #1C4353;
     height: 35px;
     margin-top: 12px;
     position:relative;
-    
-   
+    border-bottom: solid 3px rgb(153, 152, 152);   
 }
 
 #pack-list-bg{
- background-color: #F0F9FC;
- height: 300px;
+ background-color: rgb(240, 240, 240);
+ height: 320px;
  margin-top: -25px;
+ margin-bottom: -100px;
 }
 
 #pack-list-nestle {
     background-color: white;
-    height: 200px;
-    width: 750px;
+    height: 220px;
+    position: relative;
 }
 
 #item-input{
     height: 30px;
+    margin: 30px 30px 0px 60px;
 }
 
 #dropdwn-btn {
     height: 30px;
-  
+    margin: 30px 0px 0px 60px;
 }
+
+#trip-list-header{
+    margin-top: 50px;
+}
+
+.glyphicons-pencil {
+    width: 30px;
+    color: black;
+    padding-left: 30px;
+}
+
+/* .weather {
+    width: 512px;
+    height: 512px;
+    position: absolute;
+  }
+
+  .rain {
+        
+       background: url(/Users/briawalker/Desktop/WorkingFolder/Packing-List/Assets/Images/rainy-5.svg) 0 0 no-repeat;
+        animation: drift 35s linear infinite;
+
+  } */
