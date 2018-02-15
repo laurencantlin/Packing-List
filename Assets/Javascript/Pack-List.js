@@ -196,8 +196,6 @@ function addCateg() {
         }
         localStorage.setItem("Trips Array", JSON.stringify(tripArray));
     }
-
-
 }
 $("#add-categ-btn").click(addCateg);
 $(".set-category-btn").click(setCateg);
