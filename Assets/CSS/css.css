@@ -1,5 +1,5 @@
-html{
-    min-height: 100%;
+html {
+    height: 100%;
 }
 
 .wrapper {
@@ -7,7 +7,7 @@ background: linear-gradient(to top right,#779E7E,#3E90C0);
 background-repeat: no-repeat;
 background-size: cover;
 /* margin-bottom: 0; */
-/* height: 100vh; */
+height: 100vh;
 width: 100%
     
 }
@@ -17,12 +17,12 @@ background: linear-gradient(to top right,#779E7E,#3E90C0);
 background-repeat: no-repeat;
 background-size: cover;
 position: relative;
-/* bottom: 0px; */
+bottom: 0px;
 /* margin-bottom: 40px; */
 height: 100%; 
-min-height: 100vh;
+/* min-height: 100vh;
 
-padding-bottom: 40px;
+padding-bottom: 40px; */
 width: 100%
 
 }
@@ -49,23 +49,27 @@ width: 100%
 header {
    background: #1C4353;
    height: 60px;
+   position: fixed;
+   width: 100%;
 }
-.jumbotron, #weather {
+ #home-jumbo {
+    height: 300px;
+  background-image: url('/Users/briawalker/Desktop/WorkingFolder/Packing-List/Assets/Images/anantarabali_18.jpg')
+}
+
+#jumbo {
+    height: 300px;
+    
+}
+
+
+ #weather {
     height: 100px;
-    background-color:transparent;
     /* opacity: 0.5; */
 }
-.jumbotron {
-    height: 170px;
-}
 
- #home-jumbo {
-   
-    height: 200px;
-    background-color:transparent;
-
-  /* background-color: #779E7E;
-    */
+#weather-div{
+    width: 100%;
 }
 
 #footer {
@@ -77,6 +81,8 @@ header {
     text-align: center;
     padding-top: 10px;
     font-size: 10px;
+    margin-top: 100%;
+    position:fixed;
 }
 
 #cancel-btn {
@@ -105,6 +111,9 @@ header {
 #add-item {
     background-color: #779E7E;
     border-color: white;
+    border-radius: 3px;
+    height: 30px;
+    
 
 }
 
@@ -247,9 +256,9 @@ padding-left: 5px;
     margin-top: 150px;
  }
 
- .container {
+ /* .container {
      width: 80%
- }
+ } */
 
  #category-form {
      margin: auto;
@@ -481,3 +490,32 @@ margin-left: 5px;
     
 }
 
+#edit {
+    background-color: rgb(70, 88, 95);
+    height: 35px;
+    margin-top: 12px;
+    position:relative;
+    
+   
+}
+
+#pack-list-bg{
+ background-color: #F0F9FC;
+ height: 300px;
+ margin-top: -25px;
+}
+
+#pack-list-nestle {
+    background-color: white;
+    height: 200px;
+    width: 750px;
+}
+
+#item-input{
+    height: 30px;
+}
+
+#dropdwn-btn {
+    height: 30px;
+  
+}

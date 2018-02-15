@@ -28,37 +28,42 @@
     </header>
 
     <div class="wrapper">
-        <form id="add-trip-form">
-            <h2 class="add-tag"> Add Trip</h2>
-            <hr>
-
-            <div class="form-group">
-                <label for=inputDestination> Destination:</label>
-                <input type="text" class="form-control" id="tripLocation">
-                <div class="row">
-                    <div class="container" id="predictionsView">
-
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                    <form id="add-trip-form">
+                            <h2 class="add-tag"> Add Trip</h2>
+                            <hr>
+                
+                            <div class="form-group">
+                                <label for=inputDestination> Destination:</label>
+                                <input type="text" class="form-control" id="tripLocation">
+                                <div class="row">
+                                    <div class="container" id="predictionsView">
+                
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for=inputTripName> Trip Name:</label>
+                                <input type="text" class="form-control" id="tripName">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for=inputDate> Start Date:</label>
+                                <input type="date" class="form-control" id="start-date" required>
+                            </div>
+                
+                            <div class="form-group">
+                                <label for=inputDate> End Date:</label>
+                                <input type="date" class="form-control" id="end-date">
+                            </div>
+                
+                        </form>
             </div>
-            <div class="form-group">
-                <label for=inputTripName> Trip Name:</label>
-                <input type="text" class="form-control" id="tripName">
-            </div>
+        </div>
+       
 
-            <div class="form-group">
-                <label for=inputDate> Start Date:</label>
-                <input type="date" class="form-control" id="start-date" required>
-            </div>
-
-            <div class="form-group">
-                <label for=inputDate> End Date:</label>
-                <input type="date" class="form-control" id="end-date">
-            </div>
-
-        </form>
-
-        <div class="col-md-6" id="create-trip-col">
+        <div class="col-xs-12 col-md-8" id="create-trip-col">
             <a href="Pack-List.html">
                 <button type="submit" id="create-trip-btn" class="btn btn-default">Create Trip</button>
             </a>

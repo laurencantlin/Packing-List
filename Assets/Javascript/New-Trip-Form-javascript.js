@@ -86,14 +86,13 @@ function addTrip(event) {
         tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
 
     }
-    var locationSpace = $("#tripLocation").val().split(" ");
-    locationSpace = locationSpace.join("-");
+
 
 
     $.ajax({
         type: "GET",
         url: 'https://cors-anywhere.herokuapp.com/' + "https://api.openweathermap.org/data/2.5/weather?q=" + $("#tripLocation").val() + "&appid=8a03f969205ca8695bf44e2bd8b84126",
-    }).done(function (result) {
+    }).then(function (result) {
         console.log(result);
         var temp = Math.floor(result.main.temp * 9 / 5 - 459.67);
         var trip = {
@@ -105,24 +104,16 @@ function addTrip(event) {
             packingList: {
                 Default: [],
                 Medicine: [],
-                Documents:[],
+                Documents: [],
                 Clothes: [],
                 Electronics: [],
-                Shoes:[],
-                Outdoor:[],
+                Shoes: [],
+                Outdoor: [],
                 Toiletries: [],
             }
         }
 
-
-
-
-    $.ajax({
-        type: "GET",
-        url: 'https://api.teleport.org/api/urban_areas/slug:' + locationSpace + '/images/',
-    }).done(function (result) {
-        console.log(result);
-    });
+      
 
     tripsArray.push(trip);
     console.log(tripsArray);

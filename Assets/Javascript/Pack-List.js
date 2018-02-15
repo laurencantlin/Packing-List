@@ -35,6 +35,28 @@ function renderPackList() {
     $("#destination").text(SetTrip.destination);
     $("#date").text(formattedStartDate + " - " + formattedEndDate);
     $("#weatherInfo").text("It is currently " + SetTrip.weather + "\xB0 F" + " in " + SetTrip.destination + ".");
+    
+    
+    var locationSpace =  SetTrip.destination.split(",");
+    var space = locationSpace[0].replace(/\s/g, "-").toLowerCase();
+    
+    // var join = space.replace(/\s/g, "-").toLowerCase();
+        console.log(locationSpace);
+        console.log(space);
+        // console.log( typeof join);
+        $.ajax({
+            type: "GET",
+            url: 'https://api.teleport.org/api/urban_areas/slug:' + space + '/images/',
+    }).done(function (result) {
+        var pic = result.photos[0].image.web;
+     
+      $("#jumbo").attr("style","background-image: url("+pic+"); background-size: 100%;");
+       
+
+        console.log(result);
+        console.log(pic);
+    });
+
 }
 
 

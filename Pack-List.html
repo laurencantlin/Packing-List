@@ -25,63 +25,95 @@
             </button>
         </a>
     </header>
-    <div class="jumbotron" id="home-jumbo">
+    <div class="jumbotron" id="jumbo" style=>
+
         <div class="col-xs-12" id="nextTripName">
             <h1 id="trip-name"> Trip Name</h1>
         </div>
-
+        <!-- 
         <div class="col-xs-12" id="nextTripLocation">
-            <h2 id="destination"> Trip Destination</h2>
+            <h2 id="destination"></h2>
         </div>
 
         <div class="col-xs-12" id="nextTripDate">
             <h4 id="date">Trip start/end date</h4>
         </div>
+     -->
     </div>
-
     <!-- <label for="Search">City</label> -->
     <!-- <input type="text" id="citySearch"><br>
     <input id="weatherSearch" type="submit" value="Weather Search"><br> -->
 
-
     <div class="jumbotron" id="weather">
-        <h3 id="weatherInfo"> </h3>
+
+        <div class="row" id="weather-div">
+            <div class="col-xs-12">
+                <h3 id="weatherInfo"> </h3>
+            </div>
+        </div>
+        <div class="row" id="edit">
+            <div class="col-xs-12">
+                <p> edit btn
+                    <p>
+            </div>
+        </div>
+
+
+
     </div>
 
+    <div class="row" id="pack-list-bg">
+        <div class="container">
+            <h3> Trip Packing List</h3>
+            <div class="row" id="pack-list-nestle">
+                <div class="col-xs-9 input-group" id="input-div">
+                    <!-- INPUT ITEM FORM FIELD: -->
+                    <input type="text" class="form-control" aria-label="..." id="item-input">
 
+                    <div class="input-group-btn">
+                        <!-- Button and dropdown menu -->
+                        <!-- <button type="button" class="btn btn-default">Action</button> -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 input-group">
-                <!-- INPUT ITEM FORM FIELD: -->
-                <input type="text" class="form-control" aria-label="..." id="item-input">
+                        <!--SELECTED CATEGORY BUTTON  -->
+                        <button id="dropdwn-btn" type="button" class="btn btn-default " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="categ-dropdown-btn">Clothes
+                            <span class="caret"></span>
+                        </button>
 
-                <div class="input-group-btn">
-                    <!-- Button and dropdown menu -->
-                    <!-- <button type="button" class="btn btn-default">Action</button> -->
+                        <!-- +ADD NEW ITEM ICON BUTTON -->
+                        <button class="btn btn-primary" type="button" id="add-item">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button>
 
-                    <!--SELECTED CATEGORY BUTTON  -->
-                    <button type="button" class="btn btn-default " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="categ-dropdown-btn">Clothes
-                        <span class="caret"></span>
-                    </button>
+                        <!-- SELECT CATEGORY DROPDOWN LIST  -->
+                        <ul class="dropdown-menu">
 
-                    <!-- +ADD NEW ITEM ICON BUTTON -->
-                    <button class="btn btn-primary" type="button" id="add-item">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    </button>
-
-                    <!-- SELECT CATEGORY DROPDOWN LIST  -->
-                    <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#" class="custom-categ-btn" data-toggle="modal" data-target="#myModal">
+                                    Add category... </a>
+                            </li>
+                        </ul>
                         
-                        <li role="separator" class="divider"></li>
-                        <li>
-                            <a href="#" class="custom-categ-btn" data-toggle="modal" data-target="#myModal">
-                                Add category... </a>
-                        </li>
-                    </ul>
-                    <!-- </div> -->
 
+                    </div>
                 </div>
+                <div class="row" id="panels-view">
+                        <br>
+                        <div class="panel panel-default categ-panel  hide" id="panelHTML">
+                            <div id="panel-heading">
+                                <h3 class="panel-title"></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-lg-12 categ-view" id="item-view-">
+                                    <div class="row">
+            
+                                    </div>
+                                </div>
+                            </div>
+            
+                        </div>
+            
+                    </div>
             </div>
         </div>
         <!-- Button trigger modal -->
@@ -111,7 +143,7 @@
             </div>
         </div>
 
-        <div class="row" id="panels-view">
+        <!-- <div class="row" id="panels-view">
             <br>
             <div class="panel panel-default categ-panel  hide" id="panelHTML">
                 <div id="panel-heading">
@@ -127,7 +159,7 @@
 
             </div>
 
-        </div>
+        </div> -->
 
 
         <!-- <div class="row" id="category-btn">
@@ -137,13 +169,14 @@
         </div> -->
 
     </div>
+    </div>
 
     <div class="footer navbar-fixed-bottom" id="footer"> &copy A Teeny-Tiny Crabs Production 2018</div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 
+
 
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
