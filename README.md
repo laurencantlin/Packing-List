@@ -11,7 +11,10 @@ Live site: https://laurencantlin.github.io/Packing-List/
 [Bootstrap](https://getbootstrap.com/docs/3.3/) - Web framework
 
 ## Site Preview
-![alt text]()
+![welcome page](https://github.com/laurencantlin/Packing-List/blob/wireframe-UI/Assets/Images/index-img.png)
+![trip list](https://github.com/laurencantlin/Packing-List/blob/wireframe-UI/Assets/Images/triplist-img.png)
+![add trip form](https://github.com/laurencantlin/Packing-List/blob/wireframe-UI/Assets/Images/tripform-img.png)
+![packing list](https://github.com/laurencantlin/Packing-List/blob/wireframe-UI/Assets/Images/packlist-img.png?raw=true)
 
 
 ## Contributors
