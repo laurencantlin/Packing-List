@@ -15,8 +15,9 @@ var autoFill = function () {
         console.log(response);
         if (response.status === "ZERO_RESULTS") {
             $("#predictionsView").append("<p> Zero Results </p>");
-        
+
         }
+
         var renderPredictions = function () {
             var predictionArr = [];
 
@@ -24,9 +25,12 @@ var autoFill = function () {
                 var newPredict = $("<p>")
                 var predictions = [];
                 predictions = response.predictions[i].description;
+
                 var city=predictions.split(",");
                 var city=city.slice(-3, city.length);
                 city =city.join(",")
+
+
                 newPredict.text(city);
                 newPredict.addClass("prediction");
                 predictionsView.append(newPredict);
@@ -63,6 +67,7 @@ function addTrip(event) {
     if (localStorage.getItem("Trips Array")) {
         tripsArray = JSON.parse(localStorage.getItem("Trips Array"));
     }
+
     $.ajax({
         type: "GET",
         url: 'https://cors-anywhere.herokuapp.com/' + "https://api.openweathermap.org/data/2.5/weather?q=" + $("#tripLocation").val() + "&appid=8a03f969205ca8695bf44e2bd8b84126",
@@ -85,11 +90,22 @@ function addTrip(event) {
                 Toiletries: [],
             }
         }
+
         tripsArray.push(trip);
         localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
         localStorage.setItem("SetTrip", JSON.stringify(trip));
         window.location.href = "Pack-List.html";
+
     });
+
+    tripsArray.push(trip);
+    console.log(tripsArray);
+    localStorage.setItem("Trips Array", JSON.stringify(tripsArray));
+    localStorage.setItem("SetTrip", JSON.stringify(trip));
+
+    window.location.href = "Pack-List.html";
+
+});
 }
 
 $("#tripLocation").keyup(autoFill);
